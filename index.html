@@ -1,0 +1,1391 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Mundo Novo Sem Fogo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Educação ambiental de Mundo Novo/MS sobre prevenção de queimadas, a Mata Atlântica, o Rio Paraná e as unidades de conservação, com jogo, quiz e a memória da campanha Mundo Novo Sem Fogo.">
+<meta name="theme-color" content="#0D1E0C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
+<style>
+/* Layout: o ritmo do folder tríptico, faixas alternadas mata / branco / menta, títulos em placas escuras, asterisco em disco como marca de seção e setas pontilhadas nas listas. A assinatura é o relógio do fogo: 1 segundo, minutos, horas ou dias, anos. */
+:root{
+  --mata:#0D1E0C;        /* fundo da capa do folder e do logo */
+  --mata-2:#15301A;      /* placas sobre fundo escuro */
+  --verde:#124727;       /* caixas das artes */
+  --menta:#88CAA6;       /* painel central do folder */
+  --menta-clara:#D5EEDF;
+  --broto:#D9FFA9;       /* destaque das artes */
+  --chama:#F02818;       /* só a chama do logo e o fogo do jogo */
+  --brasa:#FF9A3C;
+  --branco:#FFFFFF;
+  --papel:#F4F9F3;
+  --tinta:#0D1E0C;
+  --tinta-2:#3B5444;
+  --linha:rgba(13,30,12,.16);
+  --linha-clara:rgba(217,255,169,.22);
+  --f-titulo:'Oswald','Arial Narrow','Helvetica Neue',sans-serif;
+  --f-texto:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --raio:18px;
+  --sombra:0 10px 30px rgba(13,30,12,.12);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--f-texto);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--mata)}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--f-titulo);font-weight:700;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:.005em;text-transform:uppercase}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(56px,8vw,104px)}
+.band--mata{background:var(--mata);color:var(--branco)}
+.band--menta{background:var(--menta);color:var(--tinta)}
+.band--branco{background:var(--branco)}
+.band--papel{background:var(--papel)}
+:focus-visible{outline:3px solid var(--brasa);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- topo ---------- */
+.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--mata);color:var(--branco);border-bottom:1px solid var(--linha-clara)}
+.topo .wrap{display:flex;align-items:center;gap:16px;min-height:60px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+.marca svg{width:22px;height:26px}
+.marca span{font-family:var(--f-titulo);font-weight:600;font-size:18px;letter-spacing:.02em;text-transform:uppercase;line-height:1}
+.marca span b{color:var(--broto);font-weight:700}
+.nav{margin-left:auto;min-width:0;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;white-space:nowrap}
+.nav a{display:block;padding:8px 10px;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none;color:#E6F3E9}
+.nav a:hover{background:var(--mata-2);color:var(--broto)}
+@media (max-width:760px){.topo .wrap{flex-wrap:wrap;gap:0;padding-block:6px}.nav{margin-left:0;width:100%}.marca{padding-block:6px}}
+
+/* ---------- elementos da campanha ---------- */
+.asterisco{width:var(--t,56px);height:var(--t,56px);border-radius:50%;background:var(--menta-clara);color:var(--mata);display:grid;place-items:center;flex:none}
+.asterisco svg{width:62%;height:62%}
+.band--mata .asterisco{background:var(--broto)}
+.placa{display:inline-block;background:var(--mata);color:var(--branco);padding:14px 22px 12px;border-radius:14px;font-size:clamp(28px,4.2vw,46px)}
+.band--mata .placa{background:var(--mata-2);border:1px solid var(--linha-clara)}
+.olho{font-family:var(--f-titulo);font-weight:600;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--verde)}
+.band--mata .olho{color:var(--broto)}
+.cab{display:flex;align-items:flex-start;gap:18px;margin-bottom:36px}
+.cab-txt{display:grid;gap:14px;min-width:0}
+.lead{font-size:clamp(17px,1.6vw,19px);max-width:62ch;color:var(--tinta-2)}
+.band--mata .lead{color:#D4E6DA}
+.setas{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.setas li{display:grid;grid-template-columns:30px 1fr;gap:8px;align-items:start}
+.setas li::before{content:"";width:28px;height:14px;margin-top:6px;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 14'%3E%3Ccircle cx='2' cy='7' r='2' fill='%23124727'/%3E%3Ccircle cx='9' cy='7' r='2' fill='%23124727'/%3E%3Cpath d='M15 2l7 5-7 5' fill='none' stroke='%23124727' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.band--mata .setas li::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 14'%3E%3Ccircle cx='2' cy='7' r='2' fill='%23D9FFA9'/%3E%3Ccircle cx='9' cy='7' r='2' fill='%23D9FFA9'/%3E%3Cpath d='M15 2l7 5-7 5' fill='none' stroke='%23D9FFA9' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-texto);font-weight:700;font-size:15px;border-radius:999px;padding:13px 22px;border:2px solid transparent;cursor:pointer;text-decoration:none;transition:transform .15s,background .15s,color .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn--broto{background:var(--broto);color:var(--mata)}
+.btn--linha{border-color:var(--broto);color:var(--broto);background:transparent}
+.btn--mata{background:var(--mata);color:var(--branco)}
+.btn--claro{background:var(--branco);color:var(--mata);border-color:var(--linha)}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+.fonte{font-size:12.5px;color:var(--tinta-2);margin-top:12px}
+.band--mata .fonte,.jogo .fonte{color:#A9C3B1}
+
+/* ---------- capa ---------- */
+.capa{background:var(--mata);color:var(--branco);padding-block:clamp(36px,6vw,72px) clamp(48px,7vw,88px);overflow:hidden}
+.capa .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,64px);align-items:center}
+.capa-logo{max-width:460px;width:100%}
+.relogio{list-style:none;margin:0 0 26px;padding:0;display:grid;gap:2px}
+.relogio li{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);align-items:baseline;gap:14px;padding-block:6px;border-bottom:1px dashed var(--linha-clara)}
+@media (max-width:560px){.relogio li{grid-template-columns:minmax(0,1fr);gap:0}}
+.relogio strong{font-family:var(--f-titulo);font-weight:700;text-transform:uppercase;line-height:.95;color:var(--branco);font-size:clamp(34px,5.4vw,64px);letter-spacing:.01em}
+.relogio li:nth-child(1) strong{font-size:clamp(40px,6.4vw,76px);color:var(--broto)}
+.relogio li:nth-child(4) strong{font-size:clamp(46px,7.4vw,92px)}
+.relogio span{font-weight:600;color:#CFE3D5;font-size:clamp(14px,1.4vw,17px)}
+.capa .lead{color:#D4E6DA;margin-bottom:24px}
+.capa .olho{color:var(--menta)}
+.capa-acoes{display:flex;flex-wrap:wrap;gap:12px}
+.capa-fecho{margin-top:28px;display:flex;gap:14px;align-items:center;font-family:var(--f-titulo);font-size:clamp(18px,2vw,22px);text-transform:uppercase;letter-spacing:.03em;color:var(--broto)}
+.capa-fecho .asterisco{--t:46px}
+@media (max-width:860px){.capa .wrap{grid-template-columns:minmax(0,1fr)}.capa-logo{max-width:300px;margin-inline:auto}}
+
+/* ---------- campanha ---------- */
+.duas{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+@media (max-width:860px){.duas{grid-template-columns:minmax(0,1fr)}}
+.ficha{display:grid;gap:0;border-top:2px solid var(--mata)}
+.ficha div{display:grid;grid-template-columns:minmax(110px,34%) 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--linha)}
+.ficha dt{font-family:var(--f-titulo);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:14px;color:var(--verde)}
+.ficha dd{margin:0;font-weight:500}
+.materiais{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
+@media (max-width:860px){.materiais{grid-template-columns:minmax(0,1fr)}}
+.material{background:var(--mata);color:var(--branco);border-radius:var(--raio);padding:22px;display:grid;gap:10px;align-content:start}
+.material h3{font-size:24px;color:var(--broto)}
+.material p{color:#D4E6DA;font-size:15px}
+.material .tag{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--menta)}
+
+/* ---------- território ---------- */
+.ucs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.ucs{grid-template-columns:minmax(0,1fr)}}
+.uc{background:var(--branco);border:2px solid var(--mata);border-radius:var(--raio);padding:22px;display:grid;gap:12px;align-content:start}
+.uc .esfera{justify-self:start;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--menta-clara);color:var(--verde);padding:4px 10px;border-radius:999px}
+.uc h3{font-size:26px}
+.uc dl{margin:0;display:grid;gap:6px;font-size:14.5px}
+.uc dl div{display:flex;gap:8px;flex-wrap:wrap}
+.uc dt{font-weight:700}
+.uc dd{margin:0}
+.paisagem{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,48px);margin-top:56px;align-items:center}
+@media (max-width:860px){.paisagem{grid-template-columns:minmax(0,1fr)}}
+.ambientes{display:grid;gap:14px}
+.ambiente{display:grid;grid-template-columns:18px 1fr;gap:12px;align-items:start;padding:14px 16px;border-radius:14px;background:var(--branco);border:1px solid var(--linha)}
+.ambiente i{width:18px;height:18px;border-radius:5px;margin-top:4px}
+.ambiente b{display:block;font-weight:700}
+.ambiente span{font-size:14.5px;color:var(--tinta-2)}
+.foto-moldura{position:relative;border-radius:var(--raio);overflow:hidden;background:var(--mata)}
+.foto-moldura img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.foto-moldura figcaption{position:absolute;inset:auto 0 0;padding:28px 16px 12px;font-size:12px;color:#E7F2EA;background:linear-gradient(transparent,rgba(13,30,12,.85))}
+.fauna{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:40px}
+.bicho{background:var(--mata);color:var(--branco);border-radius:16px;padding:16px;display:grid;gap:6px;align-content:start}
+.bicho b{font-family:var(--f-titulo);text-transform:uppercase;font-size:20px;color:var(--broto);letter-spacing:.02em}
+.bicho span{font-size:13.5px;color:#CFE3D5}
+.perder{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:20px}
+.perder li{list-style:none;display:flex;gap:14px;align-items:center;padding:14px 16px;border:2px solid var(--mata);border-radius:14px;background:var(--branco);font-weight:700;font-size:15px}
+.perder li::before{content:"";flex:none;width:26px;height:26px;border-radius:50%;background:var(--mata)}
+.perder{padding:0;margin-bottom:0}
+
+/* ---------- fogo ---------- */
+.risco{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:start}
+@media (max-width:860px){.risco{grid-template-columns:minmax(0,1fr)}}
+.toggles{display:grid;gap:10px}
+.toggles fieldset{border:0;margin:0;padding:0;display:grid;gap:8px}
+.toggles legend{font-family:var(--f-titulo);text-transform:uppercase;letter-spacing:.08em;font-size:15px;color:var(--broto);margin-bottom:6px}
+.tg{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:var(--mata-2);border:1px solid var(--linha-clara);cursor:pointer;font-weight:600;font-size:15px;transition:background .15s,border-color .15s}
+.tg input{appearance:none;width:22px;height:22px;border-radius:6px;border:2px solid var(--menta);flex:none;display:grid;place-items:center;margin:0;cursor:pointer}
+.tg input:checked{background:var(--broto);border-color:var(--broto)}
+.tg input:checked::after{content:"";width:6px;height:11px;border:solid var(--mata);border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.tg:has(input:checked){background:#1E3D22;border-color:var(--broto)}
+.medidor{background:var(--branco);color:var(--tinta);border-radius:var(--raio);padding:24px;display:grid;gap:16px;position:sticky;top:90px}
+@media (max-width:860px){.medidor{position:static}}
+.medidor h3{font-size:22px}
+.barra{height:22px;border-radius:999px;background:var(--menta-clara);overflow:hidden;position:relative}
+.barra i{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,var(--menta),var(--brasa),var(--chama));border-radius:999px;transition:width .4s}
+.escala{display:flex;justify-content:space-between;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-2)}
+.veredito{font-family:var(--f-titulo);text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:1}
+.medidor p{font-size:15px;color:var(--tinta-2)}
+.chave{margin-top:4px;padding:14px 16px;border-radius:12px;background:var(--mata);color:var(--broto);font-weight:700;font-size:15px}
+
+.cards4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:760px){.cards4{grid-template-columns:minmax(0,1fr)}}
+.cartao{background:var(--branco);border-radius:var(--raio);padding:22px;border:1px solid var(--linha);display:grid;gap:12px;align-content:start}
+.cartao h3{font-size:24px;display:flex;align-items:center;gap:12px}
+.cartao h3 .asterisco{--t:38px}
+.lugares{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media (max-width:1000px){.lugares{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.lugares{grid-template-columns:minmax(0,1fr)}}
+.lugar{background:var(--mata);color:var(--branco);border-radius:var(--raio);padding:20px;display:grid;gap:12px;align-content:start}
+.lugar h3{font-size:22px;color:var(--broto)}
+.lugar ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:14.5px;color:#DCEBE0}
+.lugar li{display:grid;grid-template-columns:12px 1fr;gap:8px}
+.lugar li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--menta);margin-top:8px}
+.lugar--alerta{background:var(--broto);color:var(--mata)}
+.lugar--alerta h3{color:var(--mata)}
+.lugar--alerta ul{color:var(--mata)}
+.lugar--alerta li::before{background:var(--mata)}
+
+.canais{background:var(--mata);color:var(--branco);border-radius:24px;padding:clamp(22px,4vw,40px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(20px,4vw,40px);align-items:center;border:2px solid var(--menta)}
+@media (max-width:860px){.canais{grid-template-columns:minmax(0,1fr)}}
+.canais h3{font-size:clamp(28px,4vw,40px)}
+.canais h3 em{font-style:normal;color:var(--broto)}
+.tel-lista{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.tel{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:var(--mata-2);border:1px solid var(--linha-clara)}
+.tel span{font-weight:600;font-size:14.5px;min-width:0}
+.tel strong{font-family:var(--f-titulo);font-size:22px;letter-spacing:.02em;color:var(--broto);font-variant-numeric:tabular-nums;user-select:all;white-space:nowrap}
+.tel button{border:1px solid var(--menta);background:transparent;color:var(--menta);border-radius:999px;font:600 12px var(--f-texto);padding:6px 10px;cursor:pointer}
+.tel--193{background:var(--broto);border-color:var(--broto)}
+.tel--193 span,.tel--193 strong{color:var(--mata)}
+.tel--193 button{border-color:var(--mata);color:var(--mata)}
+@media (max-width:480px){.tel{grid-template-columns:1fr auto}.tel button{grid-column:2;grid-row:1/3}.tel strong{font-size:20px}}
+
+/* ---------- jogo ---------- */
+.jogo{background:var(--mata);color:var(--branco)}
+.jogo-topo{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:16px}
+.fases{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
+.fases li{font-family:var(--f-titulo);text-transform:uppercase;letter-spacing:.04em;font-size:15px;padding:6px 12px;border-radius:999px;border:1px solid var(--linha-clara);color:#9FB9A7}
+.fases li.ativa{background:var(--broto);color:var(--mata);border-color:var(--broto)}
+.fases li.feita{color:var(--broto);border-color:var(--broto)}
+.jogo-grade{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:960px){.jogo-grade{grid-template-columns:minmax(0,1fr)}}
+.mapa-caixa{background:#0A1709;border-radius:20px;padding:10px;border:1px solid var(--linha-clara)}
+.mapa-legendas{display:flex;justify-content:space-between;gap:6px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9FB9A7;padding:4px 4px 8px;overflow-x:auto;white-space:nowrap}
+.mapa{position:relative;display:grid;grid-template-columns:repeat(14,1fr);gap:2px;aspect-ratio:14/9;width:100%;border-radius:12px;overflow:hidden;user-select:none;touch-action:manipulation}
+.cel{position:relative;transition:background-color .5s}
+.cel[data-t="cidade"]{background:#B8C4BA;background-image:linear-gradient(90deg,rgba(13,30,12,.16) 1px,transparent 1px),linear-gradient(rgba(13,30,12,.16) 1px,transparent 1px);background-size:33% 33%}
+.cel[data-t="terreno"]{background:#D8CD8E}
+.cel[data-t="estrada"]{background:#5E6157;background-image:linear-gradient(90deg,transparent 46%,#E9E3A9 46%,#E9E3A9 54%,transparent 54%);background-size:100% 40%}
+.cel[data-t="pasto"]{background:#C4D67F}
+.cel[data-t="lavoura"]{background:#E1D27F;background-image:repeating-linear-gradient(0deg,rgba(13,30,12,.12) 0 2px,transparent 2px 6px)}
+.cel[data-t="varzea"]{background:#93CFA0;background-image:radial-gradient(circle at 30% 40%,rgba(255,255,255,.25) 0 10%,transparent 11%)}
+.cel[data-t="mata"]{background:#2E7A45;background-image:radial-gradient(circle at 30% 35%,#3E9358 0 22%,transparent 23%),radial-gradient(circle at 72% 68%,#256B3B 0 24%,transparent 25%)}
+.cel[data-t="rio"]{background:#3F86B0;background-image:repeating-linear-gradient(170deg,rgba(255,255,255,.14) 0 2px,transparent 2px 9px)}
+.cel.fogo{background:var(--chama)!important;background-image:radial-gradient(circle at 50% 80%,#FFD35A 0 18%,var(--brasa) 38%,var(--chama) 70%)!important;animation:tremer .5s infinite alternate}
+@keyframes tremer{from{filter:brightness(1)}to{filter:brightness(1.25)}}
+.cel.cinza{background:#3B3631!important;background-image:radial-gradient(circle at 40% 40%,#55504A 0 20%,transparent 22%)!important}
+.cel.rebrota{background:#8FB47C!important;background-image:none!important}
+.cel.jovem{background:#6E9F63!important;background-image:radial-gradient(circle at 40% 40%,#86B776 0 18%,transparent 20%)!important}
+.camada{position:absolute;inset:0;pointer-events:none}
+.ponto{position:absolute;transform:translate(-50%,-50%);pointer-events:auto;display:grid;place-items:center}
+.risco-btn{width:clamp(30px,5vw,46px);height:clamp(30px,5vw,46px);border-radius:50%;border:3px solid var(--branco);background:var(--chama);color:var(--branco);cursor:pointer;display:grid;place-items:center;box-shadow:0 0 0 0 rgba(240,40,24,.6);animation:pulsar 1.2s infinite;padding:0}
+.risco-btn svg{width:60%;height:60%}
+.risco-btn.ok{background:var(--menta);animation:none;border-color:var(--mata);cursor:default}
+@keyframes pulsar{0%{box-shadow:0 0 0 0 rgba(240,40,24,.7)}100%{box-shadow:0 0 0 14px rgba(240,40,24,0)}}
+.ator{position:absolute;transform:translate(-50%,-50%);line-height:1;pointer-events:none;z-index:2}
+button.ator{pointer-events:auto;border:0;padding:0;background:none;cursor:pointer}
+.bicho-m{font-size:clamp(14px,2.4vw,24px);filter:drop-shadow(0 1px 1px rgba(0,0,0,.5))}
+.equipe{font-size:clamp(16px,2.7vw,28px);filter:drop-shadow(0 2px 2px rgba(0,0,0,.6));z-index:4}
+.equipe.brig{filter:drop-shadow(0 0 3px #D9FFA9)}
+.morador{font-size:clamp(16px,2.6vw,26px)}
+.carro{font-size:clamp(18px,3.2vw,32px);transform:translate(-50%,-50%) rotate(-90deg);z-index:5;filter:drop-shadow(0 2px 2px rgba(0,0,0,.6))}
+.caminhao,.barco{font-size:clamp(20px,3.4vw,34px);z-index:3;filter:drop-shadow(0 2px 2px rgba(0,0,0,.6))}
+.raio{font-size:clamp(28px,5vw,52px);z-index:6;animation:piscar .25s 4 alternate}
+@keyframes piscar{from{opacity:.2}to{opacity:1}}
+.bituca{width:10px;height:10px;border-radius:50%;background:#FFB347;box-shadow:0 0 8px 3px #FF7A1A;z-index:6}
+.faisca{width:clamp(28px,4.6vw,44px);height:clamp(28px,4.6vw,44px);border-radius:50%!important;background:radial-gradient(circle,#FFE08A 0 22%,#FF7A1A 40%,rgba(240,40,24,.15) 70%)!important;border:2px solid #fff!important;animation:pulsar .8s infinite;z-index:6}
+.pessoa{font-size:clamp(18px,3.2vw,32px);width:clamp(34px,5.4vw,52px);height:clamp(34px,5.4vw,52px);border-radius:50%!important;background:rgba(255,255,255,.92)!important;border:3px solid var(--chama)!important;display:grid;place-items:center;animation:pulsar 1.1s infinite;z-index:6}
+.mangueiras{position:absolute;inset:0;width:100%;height:100%;z-index:3;overflow:visible}
+.mangueiras .mg{fill:none;stroke:#E8C547;stroke-width:3.5;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.mangueiras .jato{stroke:#9BDCFF;stroke-width:4;stroke-dasharray:3 5;vector-effect:non-scaling-stroke;stroke-linecap:round;animation:jato .35s linear infinite}
+@keyframes jato{to{stroke-dashoffset:-16}}
+.cel.brasa{box-shadow:inset 0 0 0 3px #FF9A3C;background-image:radial-gradient(circle at 50% 60%,#FF9A3C 0 14%,transparent 16%)!important}
+.cel.aceiro{background:#8A6A45!important;background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.18) 0 3px,transparent 3px 7px)!important}
+.agua{display:grid;gap:6px}
+.agua small{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#9FB9A7;font-weight:700}
+.agua-barra{height:12px;border-radius:999px;background:#0A1709;overflow:hidden}
+.agua-barra i{display:block;height:100%;width:100%;background:#9BDCFF;transition:width .4s}
+.escolhas button[disabled]{opacity:.65;cursor:default;border-color:var(--broto)}
+.balao{position:absolute;transform:translate(-50%,-130%);background:var(--branco);color:var(--mata);font-size:11px;font-weight:700;padding:4px 8px;border-radius:8px;white-space:nowrap}
+.painel{background:var(--mata-2);border:1px solid var(--linha-clara);border-radius:20px;padding:20px;display:grid;gap:14px;align-content:start;min-height:100%}
+.painel h3{font-size:26px;color:var(--broto)}
+.painel p{color:#DCEBE0;font-size:15px}
+.cond{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.cond div{background:#0A1709;border-radius:12px;padding:10px;display:grid;gap:2px}
+.cond small{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#9FB9A7;font-weight:700}
+.cond b{font-family:var(--f-titulo);font-size:18px;color:var(--branco);font-weight:600}
+.cron{font-family:var(--f-titulo);font-size:52px;line-height:1;color:var(--broto);font-variant-numeric:tabular-nums}
+.escolhas{display:grid;gap:8px}
+.escolhas button{text-align:left;padding:12px 14px;border-radius:12px;border:1px solid var(--menta);background:transparent;color:var(--branco);font:600 15px var(--f-texto);cursor:pointer}
+.escolhas button:hover{background:#1E3D22}
+.retorno{padding:12px 14px;border-radius:12px;font-size:14.5px;font-weight:600}
+.retorno.bom{background:var(--broto);color:var(--mata)}
+.retorno.ruim{background:#3A1410;color:#FFD3CB;border:1px solid var(--chama)}
+.placar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.placar div{background:#0A1709;border-radius:12px;padding:10px;text-align:center}
+.placar b{display:block;font-family:var(--f-titulo);font-size:28px;color:var(--broto);font-variant-numeric:tabular-nums}
+.placar small{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#9FB9A7;font-weight:700}
+.tempo-anos{display:grid;gap:8px}
+.tempo-anos input{width:100%;accent-color:#D9FFA9}
+.tempo-anos output{font-family:var(--f-titulo);font-size:24px;text-transform:uppercase;color:var(--broto)}
+.como{margin-top:22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:900px){.como{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.como{grid-template-columns:minmax(0,1fr)}}
+.como div{border-top:3px solid var(--broto);padding-top:10px;display:grid;gap:4px}
+.como b{font-family:var(--f-titulo);text-transform:uppercase;font-size:20px;color:var(--broto)}
+.como span{font-size:14px;color:#CFE3D5}
+.legenda-mapa{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:12px;color:#CFE3D5}
+.legenda-mapa span{display:inline-flex;align-items:center;gap:6px}
+.legenda-mapa i{width:12px;height:12px;border-radius:3px;display:inline-block}
+
+/* ---------- escola ---------- */
+.quiz{background:var(--branco);border-radius:24px;padding:clamp(20px,4vw,36px);border:2px solid var(--mata);display:grid;gap:18px}
+.quiz-prog{display:flex;justify-content:space-between;gap:12px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-2)}
+.quiz-frase{font-family:var(--f-titulo);text-transform:none;font-weight:600;font-size:clamp(22px,2.8vw,30px);line-height:1.2}
+.quiz-bts{display:flex;flex-wrap:wrap;gap:10px}
+.quiz-bts .btn{min-width:130px;justify-content:center}
+.quiz-exp{padding:14px 16px;border-radius:14px;background:var(--menta-clara);font-size:15px}
+.quiz-exp b{display:block;margin-bottom:4px}
+.check{background:var(--mata);color:var(--branco);border-radius:24px;padding:clamp(20px,4vw,36px);display:grid;gap:14px}
+.check h3{font-size:clamp(26px,3vw,34px);color:var(--broto)}
+.check ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.check label{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:var(--mata-2);border:1px solid var(--linha-clara);cursor:pointer;font-size:15px}
+.check input{appearance:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--menta);flex:none;margin:1px 0 0;display:grid;place-items:center;cursor:pointer}
+.check input:checked{background:var(--broto);border-color:var(--broto)}
+.check input:checked::after{content:"";width:5px;height:10px;border:solid var(--mata);border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.check-res{font-weight:700;color:var(--broto)}
+.escola-grade{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:900px){.escola-grade{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- memória ---------- */
+.linha-tempo{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media (max-width:900px){.linha-tempo{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.linha-tempo{grid-template-columns:minmax(0,1fr)}}
+.linha-tempo li{border-top:3px solid var(--mata);padding-top:12px;display:grid;gap:6px;align-content:start}
+.linha-tempo time{font-family:var(--f-titulo);text-transform:uppercase;font-size:15px;letter-spacing:.06em;color:var(--verde);font-weight:600}
+.linha-tempo b{font-size:16px}
+.linha-tempo span{font-size:14.5px;color:var(--tinta-2)}
+.abas{display:flex;flex-wrap:wrap;gap:8px;margin:44px 0 18px}
+.abas button{font:700 14px var(--f-texto);padding:10px 16px;border-radius:999px;border:2px solid var(--mata);background:transparent;color:var(--mata);cursor:pointer}
+.abas button[aria-selected="true"]{background:var(--mata);color:var(--broto)}
+.painel-galeria{background:var(--branco);border-radius:24px;padding:clamp(16px,3vw,28px);border:1px solid var(--linha)}
+.serie{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center}
+@media (max-width:760px){.serie{grid-template-columns:minmax(0,1fr)}}
+.serie-img{position:relative;max-width:460px;width:100%;margin-inline:auto}
+.serie-img img{border-radius:14px;aspect-ratio:4/5;object-fit:cover;width:100%;box-shadow:var(--sombra)}
+.serie-nav{display:flex;align-items:center;gap:10px;margin-top:12px;justify-content:center}
+.serie-nav button{width:44px;height:44px;border-radius:50%;border:2px solid var(--mata);background:var(--branco);cursor:pointer;display:grid;place-items:center}
+.serie-nav button svg{width:18px;height:18px}
+.pontos{display:flex;gap:6px}
+.pontos i{width:9px;height:9px;border-radius:50%;background:var(--linha)}
+.pontos i.on{background:var(--mata)}
+.serie-txt{display:grid;gap:12px}
+.serie-txt .grande{font-family:var(--f-titulo);text-transform:uppercase;font-size:clamp(40px,6vw,68px);line-height:.95;color:var(--mata)}
+.galeria{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.galeria figure{margin:0;display:grid;gap:8px}
+.galeria button{padding:0;border:0;background:none;cursor:zoom-in;border-radius:12px;overflow:hidden;display:block;width:100%}
+.galeria img{width:100%;aspect-ratio:var(--ar,4/3);object-fit:cover;transition:transform .3s}
+.galeria button:hover img{transform:scale(1.03)}
+.galeria figcaption{font-size:13.5px;color:var(--tinta-2)}
+.galeria--largo{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.spot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px;align-items:center;margin-top:28px;background:var(--mata);color:var(--branco);border-radius:24px;padding:clamp(20px,4vw,36px)}
+@media (max-width:860px){.spot{grid-template-columns:minmax(0,1fr)}}
+.spot h3{font-size:clamp(28px,4vw,42px);color:var(--broto)}
+.spot audio{width:100%;margin-top:16px}
+.spot blockquote{margin:0;padding:18px 20px;border-left:4px solid var(--broto);background:var(--mata-2);border-radius:0 14px 14px 0;font-size:15.5px;color:#DCEBE0;font-style:italic}
+.resultados{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+@media (max-width:900px){.resultados{grid-template-columns:minmax(0,1fr)}}
+.relato{background:var(--menta);border-radius:24px;padding:clamp(20px,4vw,36px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:center;margin-top:28px}
+.relato .asterisco{--t:72px;background:var(--mata)}
+.relato .asterisco{color:var(--broto)}
+.relato h3{font-size:clamp(24px,3vw,32px)}
+@media (max-width:560px){.relato{grid-template-columns:minmax(0,1fr)}}
+.creditos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:28px}
+@media (max-width:760px){.creditos{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- projetos ---------- */
+.proj-grupo{display:grid;gap:14px;margin-top:20px}
+.proj-grupo h3{font-size:22px;color:var(--broto)}
+.projetos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.projeto{background:var(--mata-2);border:1px solid var(--linha-clara);border-radius:var(--raio);padding:20px;display:grid;gap:10px;align-content:start;text-decoration:none;color:var(--branco)}
+a.projeto:hover{border-color:var(--broto)}
+.projeto small{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--menta)}
+.projeto b{font-family:var(--f-titulo);text-transform:uppercase;font-size:24px;line-height:1.05;color:var(--branco)}
+.projeto span{font-size:14px;color:#CFE3D5}
+.projeto em{font-style:normal;font-size:13px;font-weight:700;color:var(--broto)}
+
+/* ---------- rodapé ---------- */
+.rodape{background:#081307;color:#CFE3D5;padding-block:48px 40px;font-size:14px}
+.rodape .wrap{display:grid;gap:28px}
+.rodape-topo{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
+.rodape-topo img{max-width:340px;width:100%;border-radius:10px}
+.rodape h4{font-size:16px;color:var(--broto);letter-spacing:.08em;margin-bottom:10px}
+.refs{columns:2 320px;column-gap:32px;margin:0;padding-left:18px}
+.refs li{break-inside:avoid;margin-bottom:8px}
+.refs a{color:#E6F3E9}
+.rodape-fim{border-top:1px solid var(--linha-clara);padding-top:18px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13px}
+
+/* ---------- visor ---------- */
+dialog.visor{border:0;padding:0;background:transparent;max-width:min(96vw,1200px);max-height:94vh}
+dialog.visor::backdrop{background:rgba(8,19,7,.88)}
+.visor img{max-height:86vh;width:auto;max-width:100%;border-radius:10px;margin-inline:auto}
+.visor p{color:#E6F3E9;text-align:center;font-size:14px;margin-top:8px}
+.visor button{position:absolute;top:8px;right:8px;width:44px;height:44px;border-radius:50%;border:0;background:var(--broto);color:var(--mata);font:700 22px var(--f-texto);cursor:pointer}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ast" viewBox="0 0 40 40"><g stroke="currentColor" stroke-width="3.6" stroke-linecap="round"><path d="M20 4v32M4 20h32M8.7 8.7l22.6 22.6M31.3 8.7L8.7 31.3"/></g></symbol>
+    <symbol id="chama" viewBox="0 0 22 26"><path d="M11 1c1 4 5 6 5 11 0-2-1-3-2-4 0 4-3 5-3 9-1-2-3-3-3-6-1 1-2 3-2 5 0-1-3-3-3-7 0-5 6-6 8-8z" fill="#F02818"/><rect x="0" y="23" width="22" height="2" fill="#F02818"/></symbol>
+    <symbol id="seta" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="#0D1E0C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="Mundo Novo Sem Fogo, início"><svg aria-hidden="true"><use href="#chama"/></svg><span>Mundo Novo <b>Sem Fogo</b></span></a>
+    <nav class="nav" aria-label="Seções">
+      <ul>
+        <li><a href="#territorio">Nosso território</a></li>
+        <li><a href="#fogo">Entender o fogo</a></li>
+        <li><a href="#prevenir">Prevenir</a></li>
+        <li><a href="#escola">Na escola</a></li>
+        <li><a href="#campanha">A campanha</a></li>
+        <li><a href="#memoria">Memória</a></li>
+        <li><a href="#projetos">Outros projetos</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ===================== CAPA ===================== -->
+<section class="capa" id="inicio">
+  <div class="wrap">
+    <img class="capa-logo" src="midia/logo-campanha.jpg" alt="Logomarca Mundo Novo Sem Fogo: chama vermelha sobre o nome da campanha, com a frase Prevenir hoje é proteger o nosso amanhã" width="840" height="790">
+    <div>
+      <p class="olho" style="margin-bottom:14px">Mundo Novo/MS · Mata Atlântica · Rio Paraná</p>
+      <h1 class="sr">Mundo Novo Sem Fogo</h1>
+      <ol class="relogio" aria-label="O tempo do fogo">
+        <li><strong>1 segundo</strong><span>para uma bituca cair</span></li>
+        <li><strong>Minutos</strong><span>para o fogo se espalhar</span></li>
+        <li><strong>Horas ou dias</strong><span>para combater um incêndio</span></li>
+        <li><strong>Anos</strong><span>para a natureza se recuperar</span></li>
+      </ol>
+      <p class="lead">A campanha Mundo Novo Sem Fogo continua aqui. Entenda por que o fogo se espalha tão rápido na estiagem, conheça as matas, várzeas e ilhas que temos para proteger e veja o que fazer em casa, no campo, na estrada e no rio.</p>
+      <div class="capa-acoes">
+        <a class="btn btn--broto" href="#territorio">Por que proteger Mundo Novo</a>
+      </div>
+      <p class="capa-fecho"><span class="asterisco" aria-hidden="true"><svg><use href="#ast"/></svg></span>Não troque segundos de descuido por anos de consequências</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TERRITÓRIO ===================== -->
+<section class="band band--papel" id="territorio">
+  <div class="wrap">
+    <div class="cab">
+      <span class="asterisco" aria-hidden="true"><svg><use href="#ast"/></svg></span>
+      <div class="cab-txt">
+        <p class="olho">Nosso território</p>
+        <h2 class="placa">Por que proteger Mundo Novo?</h2>
+        <p class="lead">Mundo Novo fica na planície do Rio Paraná, na Mata Atlântica, entre o Rio Iguatemi e o Rio Paraná. O município abriga parte do Parque Nacional de Ilha Grande, remanescentes de mata, nascentes e matas ciliares que protegem os rios da bacia do Paraná.</p>
+      </div>
+    </div>
+
+    <div class="ucs">
+      <article class="uc">
+        <span class="esfera">Federal · proteção integral</span>
+        <h3>Parque Nacional de Ilha Grande</h3>
+        <p>Ilhas e várzeas do Rio Paraná protegidas em nove municípios do Paraná e de Mato Grosso do Sul. Mundo Novo é um deles.</p>
+        <dl>
+          <div><dt>Criação:</dt><dd>Decreto de 30/09/1997</dd></div>
+          <div><dt>Área:</dt><dd>cerca de 76,5 mil hectares</dd></div>
+          <div><dt>Gestão:</dt><dd>ICMBio, NGI Rio Paraná</dd></div>
+          <div><dt>Destaque:</dt><dd>reconhecido como Sítio Ramsar, área úmida de importância internacional, em 2017</dd></div>
+        </dl>
+      </article>
+      <article class="uc">
+        <span class="esfera">Federal · uso sustentável</span>
+        <h3>APA das Ilhas e Várzeas do Rio Paraná</h3>
+        <p>Área de proteção ambiental que envolve o parque e se estende pelas ilhas, várzeas e planícies de inundação do Rio Paraná.</p>
+        <dl>
+          <div><dt>Criação:</dt><dd>Decreto de 30/09/1997</dd></div>
+          <div><dt>Área:</dt><dd>cerca de 1 milhão de hectares</dd></div>
+          <div><dt>Gestão:</dt><dd>ICMBio, NGI Rio Paraná</dd></div>
+          <div><dt>Fauna ameaçada citada:</dt><dd>onça-pintada, cervo-do-pantanal, anta, lontra, jaguatirica, bugio e piracanjuba</dd></div>
+        </dl>
+      </article>
+      <article class="uc">
+        <span class="esfera">Municipal · uso sustentável</span>
+        <h3>APA da Bacia do Rio Iguatemi</h3>
+        <p>Área de proteção ambiental criada pelo município para cuidar da bacia do Rio Iguatemi, que faz divisa com Eldorado e deságua no Rio Paraná.</p>
+        <dl>
+          <div><dt>Criação:</dt><dd>Decreto Municipal nº 2.281/2003</dd></div>
+          <div><dt>Gestão:</dt><dd>Prefeitura de Mundo Novo</dd></div>
+        </dl>
+      </article>
+    </div>
+    <p class="fonte">Fontes: ICMBio; Cadastro Nacional de Unidades de Conservação (MMA); MMA (2017); Decreto Municipal nº 2.281/2003.</p>
+
+    <div class="paisagem">
+      <div style="display:grid;gap:18px">
+        <h3 style="font-size:clamp(26px,3.2vw,36px)">Várzea, mata e ilha: cada uma reage ao fogo de um jeito</h3>
+        <p>O Plano de Manejo Integrado do Fogo do Parque Nacional de Ilha Grande mostra que os ambientes do parque não sofrem o fogo da mesma forma. Entender essa diferença ajuda a saber o que proteger primeiro.</p>
+        <div class="ambientes">
+          <div class="ambiente"><i style="background:#93CFA0"></i><div><b>Várzeas</b><span>Cobrem cerca de 80% do parque. Queimam com facilidade, mas rebrotam rápido.</span></div></div>
+          <div class="ambiente"><i style="background:#2E7A45"></i><div><b>Floresta estacional semidecidual</b><span>Os capões de mato e as matas dos diques, nas margens. Queimam menos, mas são sensíveis: depois do fogo, a recuperação é lenta e difícil.</span></div></div>
+          <div class="ambiente"><i style="background:#3F86B0"></i><div><b>Lagoas e plantas aquáticas</b><span>As macrófitas também pegam fogo com facilidade na seca.</span></div></div>
+        </div>
+        <p class="fonte">Fonte: ICMBio, Plano de Manejo Integrado do Fogo do Parque Nacional de Ilha Grande 2023 a 2027.</p>
+      </div>
+      <figure class="foto-moldura" style="margin:0">
+        <img src="midia/foto-mata-corrego.jpg" alt="Córrego entre pedras cobertas de musgo, dentro de uma mata fechada" width="605" height="532" loading="lazy">
+        <figcaption>Matas e córregos: exemplos do que temos que proteger. Imagem ilustrativa das artes da campanha.</figcaption>
+      </figure>
+    </div>
+
+    <h3 style="font-size:clamp(26px,3.2vw,36px);margin-top:56px">Quem vive aqui</h3>
+    <div class="fauna">
+      <div class="bicho"><b>Onça-pintada</b><span>Maior felino das Américas, citada entre as espécies ameaçadas da APA.</span></div>
+      <div class="bicho"><b>Cervo-do-pantanal</b><span>Maior cervo da América do Sul, depende das várzeas.</span></div>
+      <div class="bicho"><b>Jacaré-de-papo-amarelo</b><span>Vive nas lagoas, banhados e margens do rio.</span></div>
+      <div class="bicho"><b>Anta</b><span>Espalha sementes e ajuda a mata a se renovar.</span></div>
+      <div class="bicho"><b>Mais de 400 aves</b><span>Registradas no Parque Nacional de Ilha Grande.</span></div>
+      <div class="bicho"><b>Dourado e pintado</b><span>Peixes migradores do Rio Paraná, que dependem de rios e várzeas saudáveis.</span></div>
+    </div>
+    <p class="fonte">Fontes: ICMBio, Plano de Manejo Integrado do Fogo do Parque Nacional de Ilha Grande; ICMBio, página da APA das Ilhas e Várzeas do Rio Paraná.</p>
+
+    <h3 style="font-size:clamp(26px,3.2vw,36px);margin-top:56px">O que podemos perder com um incêndio?</h3>
+    <ul class="perder">
+      <li>Morte e deslocamento de animais silvestres</li>
+      <li>Empobrecimento e exposição do solo</li>
+      <li>Riscos à saúde da população</li>
+      <li>Impactos sobre rios, córregos e nascentes</li>
+      <li>Prejuízos às áreas de lazer e paisagens naturais</li>
+      <li>Pastagens e lavouras destruídas</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== FOGO ===================== -->
+<section class="band band--mata" id="fogo">
+  <div class="wrap">
+    <div class="cab">
+      <span class="asterisco" aria-hidden="true"><svg><use href="#ast"/></svg></span>
+      <div class="cab-txt">
+        <p class="olho">Entender o fogo</p>
+        <h2 class="placa">Quando o risco de incêndio aumenta?</h2>
+        <p class="lead">Marque as condições do dia e veja o risco subir. Repare na diferença entre o que vem do tempo e o que vem das nossas atitudes.</p>
+      </div>
+    </div>
+    <div class="risco">
+      <div class="toggles">
+        <fieldset>
+          <legend>O tempo prepara</legend>
+          <label class="tg"><input type="checkbox" id="r-seca" data-peso="tempo">Vegetação seca</label>
+          <label class="tg"><input type="checkbox" id="r-umid" data-peso="tempo">Baixa umidade do ar</label>
+          <label class="tg"><input type="checkbox" id="r-chuva" data-peso="tempo">Ausência de chuvas por períodos prolongados</label>
+          <label class="tg"><input type="checkbox" id="r-vento" data-peso="tempo">Ventos mais intensos</label>
+        </fieldset>
+        <fieldset style="margin-top:14px">
+          <legend>A atitude acende</legend>
+          <label class="tg"><input type="checkbox" id="r-folhas" data-peso="acao">Queima de folhas, galhos ou resíduos</label>
+          <label class="tg"><input type="checkbox" id="r-bituca" data-peso="acao">Descarte inadequado de bitucas de cigarro</label>
+          <label class="tg"><input type="checkbox" id="r-perto" data-peso="acao">Uso do fogo próximo a áreas de vegetação</label>
+        </fieldset>
+      </div>
+      <div class="medidor" aria-live="polite">
+        <h3>Risco de o fogo começar e se espalhar</h3>
+        <div class="barra" role="img" id="barra-risco" aria-label="Risco baixo"><i id="barra-i"></i></div>
+        <div class="escala"><span>Menor</span><span>Maior</span><span>Muito maior</span></div>
+        <p class="veredito" id="veredito">Marque as condições</p>
+        <p id="explica">Comece pelas condições do tempo. Depois marque as atitudes.</p>
+        <p class="chave">Você escolhe onde o fogo começa. O vento pode decidir até onde ele vai.</p>
+      </div>
+    </div>
+
+    <div class="cards4" style="margin-top:48px">
+      <article class="cartao" style="background:var(--mata-2);border-color:var(--linha-clara);color:var(--branco)">
+        <h3 style="color:var(--broto)"><span class="asterisco" aria-hidden="true"><svg><use href="#ast"/></svg></span>Agosto e setembro pedem atenção dobrada</h3>
+        <p style="color:#DCEBE0">No Parque Nacional de Ilha Grande, agosto e setembro concentram a maior parte dos incêndios registrados e da área queimada. As geadas do inverno secam a vegetação e, com umidade baixa, calor e vento forte, o fogo corre. O plano do parque cita um incêndio que queimou 36 mil hectares em menos de 12 horas.</p>
+        <p class="fonte">Fonte: ICMBio, Plano de Manejo Integrado do Fogo do Parque Nacional de Ilha Grande 2023 a 2027.</p>
+      </article>
+      <article class="cartao" style="background:var(--mata-2);border-color:var(--linha-clara);color:var(--branco)">
+        <h3 style="color:var(--broto)"><span class="asterisco" aria-hidden="true"><svg><use href="#ast"/></svg></span>O fogo volta aos mesmos lugares</h3>
+        <p style="color:#DCEBE0">Em 22 anos de registros, a soma das áreas queimadas no parque passa de 322 mil hectares, mais de quatro vezes o tamanho da unidade. O mesmo lugar queima mais de uma vez, e a mata não tem tempo de se recuperar entre um incêndio e outro.</p>
+        <p class="fonte">Fonte: ICMBio, Plano de Manejo Integrado do Fogo do Parque Nacional de Ilha Grande 2023 a 2027.</p>
+      </article>
+      <article class="cartao" style="background:var(--mata-2);border-color:var(--linha-clara);color:var(--branco)">
+        <h3 style="color:var(--broto)"><span class="asterisco" aria-hidden="true"><svg><use href="#ast"/></svg></span>Fumaça faz mal</h3>
+        <p style="color:#DCEBE0">A fumaça das queimadas pode causar dor de cabeça, ardência nos olhos, no nariz e na garganta, tosse seca e falta de ar. Crianças menores de 5 anos, idosos, gestantes e pessoas com doenças preexistentes sofrem mais.</p>
+        <ul class="setas" style="font-size:15px">
+          <li>Beba água com frequência e fique em locais fechados, protegidos da fumaça</li>
+          <li>Evite exercício ao ar livre, principalmente entre 12h e 16h</li>
+          <li>Com falta de ar ou outros sintomas, procure atendimento de saúde</li>
+        </ul>
+        <p class="fonte">Fonte: Ministério da Saúde (2026), Queimadas e incêndios florestais: alerta de risco sanitário e recomendações para a população.</p>
+      </article>
+      <article class="cartao" style="background:var(--mata-2);border-color:var(--linha-clara);color:var(--branco)">
+        <h3 style="color:var(--broto)"><span class="asterisco" aria-hidden="true"><svg><use href="#ast"/></svg></span>O que diz a lei</h3>
+        <ul class="setas" style="font-size:15px">
+          <li>A queima de resíduos sólidos a céu aberto é proibida (Lei nº 12.305/2010, art. 47, III).</li>
+          <li>Provocar incêndio em mata ou floresta é crime ambiental (Lei nº 9.605/1998, art. 41).</li>
+          <li>O uso do fogo no campo segue a Política Nacional de Manejo Integrado do Fogo (Lei nº 14.944/2024) e depende de autorização.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PREVENIR ===================== -->
+<section class="band band--menta" id="prevenir">
+  <div class="wrap">
+    <div class="cab">
+      <span class="asterisco" aria-hidden="true" style="background:var(--mata);color:var(--broto)"><svg><use href="#ast"/></svg></span>
+      <div class="cab-txt">
+        <p class="olho" style="color:var(--mata)">Prevenir</p>
+        <h2 class="placa">Como podemos prevenir?</h2>
+        <p class="lead" style="color:var(--mata)">A prevenção muda de jeito conforme o lugar. Veja o que fazer em casa, no campo, na estrada e no rio.</p>
+      </div>
+    </div>
+    <div class="lugares">
+      <article class="lugar">
+        <h3>Em casa e no bairro</h3>
+        <ul>
+          <li>Não queime lixo, folhas nem galhos. Separe o lixo para a coleta.</li>
+          <li>Mantenha o quintal e os terrenos limpos, sem acumular mato seco.</li>
+          <li>Oriente as crianças a não brincar com fogo.</li>
+        </ul>
+      </article>
+      <article class="lugar">
+        <h3>No sítio e na roça</h3>
+        <ul>
+          <li>Use o fogo apenas quando autorizado e com os cuidados necessários.</li>
+          <li>Nunca deixe o fogo sozinho e mantenha água e ferramentas por perto.</li>
+          <li>Na seca, com vento e geada recente, adie qualquer uso do fogo.</li>
+        </ul>
+      </article>
+      <article class="lugar">
+        <h3>Na estrada e no rio</h3>
+        <ul>
+          <li>Não descarte bitucas de cigarro na beira das ruas, das estradas e em áreas de vegetação.</li>
+          <li>Na pesca ou no acampamento nas ilhas, apague bem qualquer fogueira com água e terra antes de sair.</li>
+          <li>Leve o seu lixo de volta.</li>
+        </ul>
+      </article>
+      <article class="lugar lugar--alerta">
+        <h3>Viu fogo?</h3>
+        <ul>
+          <li>Ligue para o Corpo de Bombeiros, 193, assim que vir fumaça ou chamas.</li>
+          <li>Diga onde é, com um ponto de referência, e se há casas ou pessoas perto.</li>
+          <li>Afaste-se da fumaça. Não tente apagar um fogo grande sozinho.</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="canais" style="margin-top:40px" id="canais">
+      <div style="display:grid;gap:14px">
+        <h3>Ao identificar um foco de incêndio, <em>acione imediatamente</em></h3>
+        <p style="color:#DCEBE0">Toque em copiar para levar o número para o seu celular. Salve na agenda antes da estiagem.</p>
+      </div>
+      <ul class="tel-lista">
+        <li class="tel tel--193"><span>Corpo de Bombeiros</span><strong>193</strong><button type="button" data-copiar="193">Copiar</button></li>
+        <li class="tel"><span>Polícia Militar Ambiental</span><strong>(67) 3474-1751</strong><button type="button" data-copiar="(67) 3474-1751">Copiar</button></li>
+        <li class="tel"><span>Defesa Civil Estadual</span><strong>(67) 99607-1525</strong><button type="button" data-copiar="(67) 99607-1525">Copiar</button></li>
+        <li class="tel"><span>Disque Denúncia Estadual</span><strong>181</strong><button type="button" data-copiar="181">Copiar</button></li>
+        <li class="tel"><span>Secretaria de Meio Ambiente e Urbanismo</span><strong>(67) 3474-2452</strong><button type="button" data-copiar="(67) 3474-2452">Copiar</button></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== JOGO ===================== -->
+<section class="band jogo" id="jogo">
+  <div class="wrap">
+    <div class="cab">
+      <span class="asterisco" aria-hidden="true" style="background:var(--broto)"><svg><use href="#ast"/></svg></span>
+      <div class="cab-txt">
+        <p class="olho" style="color:var(--broto)">Jogo</p>
+        <h2 class="placa" style="background:var(--mata-2);border:1px solid var(--linha-clara)">O relógio do fogo</h2>
+        <p class="lead" style="color:#D4E6DA">Um pedaço de Mundo Novo em um mapa: a cidade, a estrada, o pasto, a várzea, a mata da beira do rio, o Rio Paraná e uma ilha. Carros passam, vizinhos, produtores e pescadores tomam decisões, o vento muda. Você escolhe o que fazer em cada situação e acompanha o fogo, o combate dos bombeiros e a recuperação da natureza.</p>
+      </div>
+    </div>
+
+    <div class="jogo-topo">
+      <ol class="fases" id="fases">
+        <li data-f="0">1 segundo</li>
+        <li data-f="1">Minutos</li>
+        <li data-f="2">Horas ou dias</li>
+        <li data-f="3">Anos</li>
+      </ol>
+      <button class="btn btn--linha" type="button" id="j-reiniciar">Reiniciar o jogo</button>
+    </div>
+
+    <div class="jogo-grade">
+      <div class="mapa-caixa">
+        <div class="mapa-legendas" aria-hidden="true"><span>Cidade</span><span>Estrada</span><span>Pasto e lavoura</span><span>Várzea</span><span>Mata</span><span>Rio Paraná</span><span>Ilha</span></div>
+        <div class="mapa" id="mapa" role="group" aria-label="Mapa do jogo">
+          <div class="camada" id="camada"></div>
+        </div>
+        <div class="legenda-mapa" aria-hidden="true">
+          <span><i style="background:#F02818"></i>Fogo</span>
+          <span><i style="background:#3B3631"></i>Área queimada</span>
+          <span><i style="background:#8FB47C"></i>Rebrotando</span>
+          <span><i style="background:#2E7A45"></i>Mata</span>
+          <span><i style="background:#93CFA0"></i>Várzea</span>
+        </div>
+      </div>
+      <aside class="painel" id="painel" aria-live="polite"></aside>
+    </div>
+
+    <div class="como">
+      <div><b>1 segundo</b><span>Um carro joga algo pela janela, um vizinho quer queimar lixo, o vento muda. Toque no que piscar e escolha a atitude certa antes que o tempo acabe.</span></div>
+      <div><b>Minutos</b><span>O fogo começa e o vento decide para onde ele vai. Um morador vê a fumaça: para quem ele liga? E o que fazer quando a fumaça chega às casas?</span></div>
+      <div><b>Horas ou dias</b><span>O caminhão chega, os bombeiros descem com a mangueira. Se a situação sair do controle, chame ajuda: brigada do ICMBio, caminhão-pipa, trator para o aceiro ou Defesa Civil.</span></div>
+      <div><b>Anos</b><span>Arraste o tempo e compare: a várzea rebrota rápido, a mata leva muito mais tempo.</span></div>
+    </div>
+    <p class="fonte">O mapa é ilustrativo. O comportamento das várzeas e da mata segue o Plano de Manejo Integrado do Fogo do Parque Nacional de Ilha Grande (ICMBio, 2023). Os bichos do jogo sempre conseguem fugir.</p>
+  </div>
+</section>
+
+<!-- ===================== ESCOLA ===================== -->
+<section class="band band--papel" id="escola">
+  <div class="wrap">
+    <div class="cab">
+      <span class="asterisco" aria-hidden="true"><svg><use href="#ast"/></svg></span>
+      <div class="cab-txt">
+        <p class="olho">Para professores e estudantes</p>
+        <h2 class="placa">Na escola</h2>
+        <p class="lead">Duas atividades para fazer em sala ou em casa: um jogo de certo ou errado e uma lista para conferir se a sua casa está pronta para a estiagem.</p>
+      </div>
+    </div>
+    <div class="escola-grade">
+      <div class="quiz" id="quiz" aria-live="polite"></div>
+      <div class="check">
+        <h3>Minha casa está pronta para a estiagem?</h3>
+        <ul id="check-lista">
+          <li><label><input type="checkbox" id="c1">O lixo vai para a coleta. Ninguém aqui queima lixo.</label></li>
+          <li><label><input type="checkbox" id="c2">Folhas e galhos do quintal têm destino certo, sem fogo.</label></li>
+          <li><label><input type="checkbox" id="c3">O quintal e o terreno ao lado não acumulam mato seco.</label></li>
+          <li><label><input type="checkbox" id="c4">Quem fuma apaga a bituca e joga no lixo.</label></li>
+          <li><label><input type="checkbox" id="c5">O 193 e os outros canais de denúncia estão salvos no celular.</label></li>
+          <li><label><input type="checkbox" id="c6">As crianças sabem que fogo não é brincadeira.</label></li>
+          <li><label><input type="checkbox" id="c7">Em dia de fumaça, sabemos o que fazer: janelas fechadas, água e menos esforço ao ar livre.</label></li>
+          <li><label><input type="checkbox" id="c8">Na pesca ou no acampamento, a fogueira é apagada com água e terra antes de sair.</label></li>
+        </ul>
+        <p class="check-res" id="check-res">0 de 8 itens prontos</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CAMPANHA ===================== -->
+<section class="band band--branco" id="campanha">
+  <div class="wrap">
+    <div class="cab">
+      <span class="asterisco" aria-hidden="true"><svg><use href="#ast"/></svg></span>
+      <div class="cab-txt">
+        <p class="olho">A campanha</p>
+        <h2 class="placa">Prevenir hoje é proteger o nosso amanhã</h2>
+      </div>
+    </div>
+    <div class="duas">
+      <div style="display:grid;gap:18px">
+        <p class="lead">A campanha Mundo Novo Sem Fogo leva à população informação sobre os impactos das queimadas, as alternativas ao uso do fogo e os canais para avisar sobre um foco de incêndio. O cuidado com o fogo protege a cidade, o campo, a biodiversidade da Mata Atlântica e as unidades de conservação ligadas ao Rio Paraná.</p>
+        <p>Entre julho e outubro, a estiagem deixa a vegetação seca e o ar com pouca umidade. É quando o risco de incêndio fica maior na região. Por isso a campanha acontece todo ano nesse período, com mensagens curtas, que qualquer pessoa entende, e com um pedido simples: cada um faz a sua parte.</p>
+        <ul class="setas" style="font-weight:700;font-size:17px">
+          <li>Faça sua parte</li>
+          <li>Previna incêndios</li>
+          <li>Proteja vidas</li>
+        </ul>
+      </div>
+      <dl class="ficha">
+        <div><dt>Onde</dt><dd>Mundo Novo/MS, áreas urbana e rural, com atenção às unidades de conservação do município</dd></div>
+        <div><dt>Quando</dt><dd>Todo ano, no período de estiagem, de julho a outubro. Em 2026, a campanha se concentrou em outubro</dd></div>
+        <div><dt>Para quem</dt><dd>Moradores da cidade e do campo, estudantes da rede municipal, produtores rurais e comunidades do entorno das unidades de conservação</dd></div>
+        <div><dt>Quem faz</dt><dd>Prefeitura Municipal de Mundo Novo, pela Secretaria Municipal de Meio Ambiente e Urbanismo, com assessoria técnica da NOVAeng</dd></div>
+        <div><dt>Parceiros</dt><dd>Corpo de Bombeiros Militar de MS, Defesa Civil, Polícia Militar Ambiental, IMASUL, Sindicato Rural de Mundo Novo e ICMBio (Núcleo de Gestão Integrada Rio Paraná)</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MEMÓRIA ===================== -->
+<section class="band band--papel" id="memoria">
+  <div class="wrap">
+    <div class="cab">
+      <span class="asterisco" aria-hidden="true"><svg><use href="#ast"/></svg></span>
+      <div class="cab-txt">
+        <p class="olho">Memória</p>
+        <h2 class="placa">O que a campanha levou à cidade</h2>
+        <p class="lead">Este espaço guarda o registro do esforço feito em 2026 para levar a educação ambiental à população de Mundo Novo: nas redes sociais, nos murais, nas escolas, no rádio e no jornal. A cada ciclo da campanha, ele ganha novos registros.</p>
+      </div>
+    </div>
+
+    <ol class="linha-tempo">
+      <li><time>Outubro de 2026</time><b>Série nas redes sociais</b><span>As artes da série Mundo Novo Sem Fogo, nas páginas da Prefeitura.</span></li>
+      <li><time>Outubro de 2026</time><b>Cartazes e folders</b><span>Cartazes nos murais de órgãos públicos e parceiros, e folders para escolas e atendimento ao público.</span></li>
+      <li><time>12 a 19 de outubro de 2026</time><b>No jornal</b><span>O cartaz da campanha saiu na página Cidade do jornal Tribuna do Povo.</span></li>
+      <li><time>Segunda quinzena de outubro</time><b>No rádio</b><span>O spot Parece pouco até virar fogo.</span></li>
+    </ol>
+
+    <div class="abas" role="tablist" aria-label="Galeria da campanha">
+      <button role="tab" id="aba-serie" aria-selected="true" aria-controls="g-serie">Série nas redes</button>
+      <button role="tab" id="aba-folder" aria-selected="false" aria-controls="g-folder">Folder e cartaz</button>
+      <button role="tab" id="aba-murais" aria-selected="false" aria-controls="g-murais">Nos murais</button>
+      <button role="tab" id="aba-jornal" aria-selected="false" aria-controls="g-jornal">No jornal</button>
+    </div>
+
+    <div class="painel-galeria">
+      <div role="tabpanel" id="g-serie" aria-labelledby="aba-serie">
+        <div class="serie">
+          <div class="serie-img">
+            <img id="serie-img" src="midia/post-1-segundo.jpg" alt="" width="1080" height="1350">
+            <div class="serie-nav">
+              <button type="button" id="serie-ant" aria-label="Arte anterior"><svg style="transform:scaleX(-1)"><use href="#seta"/></svg></button>
+              <div class="pontos" id="serie-pontos" aria-hidden="true"></div>
+              <button type="button" id="serie-prox" aria-label="Próxima arte"><svg><use href="#seta"/></svg></button>
+            </div>
+          </div>
+          <div class="serie-txt">
+            <p class="olho" id="serie-n">Arte 1 de 5</p>
+            <p class="grande" id="serie-titulo">1 segundo</p>
+            <p class="lead" id="serie-desc"></p>
+            <p class="fonte">Acompanhe as publicações nas redes sociais da Prefeitura de Mundo Novo.</p>
+          </div>
+        </div>
+      </div>
+      <div role="tabpanel" id="g-folder" aria-labelledby="aba-folder" hidden>
+        <div class="galeria galeria--largo">
+          <figure><button type="button" data-ver="midia/folder-face-externa.jpg" data-leg="Folder, face externa: capa, canais de denúncia e como podemos prevenir"><img src="midia/folder-face-externa.jpg" alt="Face externa do folder Mundo Novo Sem Fogo" loading="lazy" style="--ar:2800/1979"></button><figcaption>Folder, face externa: capa, canais de denúncia e como podemos prevenir.</figcaption></figure>
+          <figure><button type="button" data-ver="midia/folder-face-interna.jpg" data-leg="Folder, face interna: por que proteger Mundo Novo, quando o risco aumenta e o que podemos perder"><img src="midia/folder-face-interna.jpg" alt="Face interna do folder Mundo Novo Sem Fogo" loading="lazy" style="--ar:2200/1555"></button><figcaption>Folder, face interna: por que proteger, quando o risco aumenta e o que podemos perder.</figcaption></figure>
+          <figure><button type="button" data-ver="midia/cartaz-a3.jpg" data-leg="Cartaz A3, com o aviso sobre a proibição da queima de resíduos a céu aberto"><img src="midia/cartaz-a3.jpg" alt="Cartaz A3 Mundo Novo Sem Fogo" loading="lazy" style="--ar:3/4;object-position:top"></button><figcaption>Cartaz A3, com o aviso sobre a proibição da queima de resíduos a céu aberto.</figcaption></figure>
+        </div>
+      </div>
+      <div role="tabpanel" id="g-murais" aria-labelledby="aba-murais" hidden>
+        <div class="galeria">
+          <figure><button type="button" data-ver="midia/registro-cartaz-1.jpg" data-leg="Cartaz da campanha em órgão parceiro"><img src="midia/registro-cartaz-1.jpg" alt="Servidora segura o cartaz da campanha na entrada de um órgão público" loading="lazy" style="--ar:3/4"></button><figcaption>Cartaz da campanha em órgão parceiro.</figcaption></figure>
+          <figure><button type="button" data-ver="midia/registro-cartaz-2.jpg" data-leg="Cartaz fixado na AGRAER"><img src="midia/registro-cartaz-2.jpg" alt="Servidor da AGRAER fixa o cartaz na parede" loading="lazy" style="--ar:3/4"></button><figcaption>Cartaz fixado na AGRAER.</figcaption></figure>
+          <figure><button type="button" data-ver="midia/registro-cartaz-3.jpg" data-leg="Cartaz no mural de atendimento"><img src="midia/registro-cartaz-3.jpg" alt="Cartaz sendo fixado em mural de avisos" loading="lazy" style="--ar:3/4"></button><figcaption>Cartaz no mural de atendimento.</figcaption></figure>
+          <figure><button type="button" data-ver="midia/registro-cartaz-4.jpg" data-leg="Cartaz no mural de avisos"><img src="midia/registro-cartaz-4.jpg" alt="Mãos fixam o cartaz da campanha em mural de cortiça" loading="lazy" style="--ar:3/4"></button><figcaption>Cartaz no mural de avisos.</figcaption></figure>
+        </div>
+      </div>
+      <div role="tabpanel" id="g-jornal" aria-labelledby="aba-jornal" hidden>
+        <div class="duas" style="align-items:center">
+          <figure style="margin:0"><button type="button" class="galeria" style="display:block;border:0;padding:0;background:none;cursor:zoom-in" data-ver="midia/jornal-recorte-campanha.jpg" data-leg="Cartaz da campanha no jornal Tribuna do Povo, 12 a 19 de outubro de 2026, página 4"><img src="midia/jornal-recorte-campanha.jpg" alt="Recorte do jornal Tribuna do Povo com o cartaz da campanha Mundo Novo Sem Fogo" loading="lazy" style="border-radius:12px;max-width:420px;width:100%;margin-inline:auto"></button></figure>
+          <div style="display:grid;gap:12px">
+            <h3 style="font-size:clamp(26px,3vw,34px)">A campanha também saiu no jornal</h3>
+            <p class="lead">O cartaz da campanha foi publicado na página Cidade do jornal Tribuna do Povo, na edição de 12 a 19 de outubro de 2026. Assim a mensagem chegou também a quem lê o jornal impresso.</p>
+            <p class="fonte">Tribuna do Povo, Mundo Novo, 12 a 19 de outubro de 2026, p. 4. Recorte da página.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="spot">
+      <div>
+        <p class="olho">Spot de rádio · 43 segundos</p>
+        <h3>Parece pouco até virar fogo</h3>
+        <audio controls preload="none" src="midia/spot-mundo-novo-sem-fogo.mp3">Seu navegador não toca áudio.</audio>
+      </div>
+      <blockquote>Basta o vento mudar para as coisas saírem do controle. Não coloque fogo em lixo, folhas, terrenos ou vegetação. E nunca descarte bitucas às margens de ruas e estradas. Parece pouco até virar fogo. Prevenir começa com uma atitude simples: não deixe a Mata Atlântica queimar por causa de uma faísca. Ao identificar um foco de incêndio ou uma queimada irregular, denuncie! Corpo de Bombeiros: ligue 193. Disque Denúncia Estadual: 181. Ou entre em contato com a Secretaria de Meio Ambiente e Urbanismo, pelo telefone 67 3474-2452. Campanha Mundo Novo Sem Fogo.</blockquote>
+    </div>
+
+    <h3 style="font-size:clamp(26px,3.2vw,36px);margin-top:56px">Resultados e impactos</h3>
+    <div class="resultados">
+      <article class="cartao"><h3><span class="asterisco" aria-hidden="true"><svg><use href="#ast"/></svg></span>Muitos canais, uma mensagem</h3><p>Redes sociais, cartaz, folder, rádio e jornal falaram a mesma língua visual e repetiram a mesma ideia: prevenir hoje é proteger o nosso amanhã.</p></article>
+      <article class="cartao"><h3><span class="asterisco" aria-hidden="true"><svg><use href="#ast"/></svg></span>Parceiros na rua</h3><p>Órgãos públicos e parceiros abriram seus murais e balcões de atendimento para a campanha, perto de quem mora na cidade e no campo.</p></article>
+      <article class="cartao"><h3><span class="asterisco" aria-hidden="true"><svg><use href="#ast"/></svg></span>Um ciclo que continua</h3><p>A partir de 2027, a campanha passa a acompanhar toda a estiagem, de julho a outubro, e este site recebe os registros de cada ano.</p></article>
+    </div>
+
+    <div class="relato">
+      <span class="asterisco" aria-hidden="true"><svg><use href="#ast"/></svg></span>
+      <div style="display:grid;gap:8px">
+        <h3>Relatos de quem fez parte</h3>
+        <p>Este espaço vai reunir a voz de moradores, estudantes, professores, brigadistas e parceiros sobre o que mudou com a campanha. Quer contar a sua experiência? Procure a Secretaria Municipal de Meio Ambiente e Urbanismo pelo telefone (67) 3474-2452.</p>
+      </div>
+    </div>
+
+    <div class="creditos">
+      <dl class="ficha">
+        <div><dt>Realização</dt><dd>Prefeitura Municipal de Mundo Novo, Secretaria Municipal de Meio Ambiente e Urbanismo</dd></div>
+        <div><dt>Assessoria técnica</dt><dd>NOVAeng Engenharia Ltda.</dd></div>
+        <div><dt>Coordenação</dt><dd>Caroline Alves Gil da Costa, engenheira ambiental</dd></div>
+        <div><dt>Apoio técnico</dt><dd>Bárbara Pinheiro Abreu, Emanuely Arguelho Minghin, Mydian Moreno Martins e Arthur Simão Silva</dd></div>
+      </dl>
+      <dl class="ficha">
+        <div><dt>Programa</dt><dd>Educação ambiental do município no ICMS Ecológico de Mato Grosso do Sul, cadastrada no SisEA/MS como campanha</dd></div>
+        <div><dt>Imagens</dt><dd>Fotos das artes: Canva. As fotos da primeira e da quarta arte da série são ilustrativas, geradas por IA. Fotos dos murais: registros da campanha.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJETOS ===================== -->
+<section class="band band--mata" id="projetos">
+  <div class="wrap">
+    <div class="cab">
+      <span class="asterisco" aria-hidden="true"><svg><use href="#ast"/></svg></span>
+      <div class="cab-txt">
+        <p class="olho">Outros projetos</p>
+        <h2 class="placa">A educação ambiental continua</h2>
+        <p class="lead">Outras ações de educação ambiental em Mundo Novo.</p>
+      </div>
+    </div>
+    <div class="proj-grupo">
+      <h3>Em Mundo Novo</h3>
+      <div class="projetos">
+        <div class="projeto"><small>Campanha</small><b>Água é Vida</b><span>Recursos hídricos e áreas úmidas: o Rio Iguatemi, o Rio Paraná, as várzeas e as unidades de conservação ligadas à água.</span></div>
+        <div class="projeto"><small>Ação pontual · Dia do Rio</small><b>Nossa Corrente</b><span>Encontro com estudantes e comunidade sobre mata ciliar e rios, com o Mapa Vivo e a Corrente de Compromissos.</span><em>24 de novembro de 2026</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape-topo">
+      <img src="midia/logos-realizacao.jpg" alt="Governo de Mundo Novo, Mato Grosso do Sul, e NOVAeng" width="770" height="246" loading="lazy">
+      <p style="max-width:46ch">Mundo Novo Sem Fogo. Prevenir hoje é proteger o nosso amanhã. Em caso de incêndio, ligue <b style="color:var(--broto)">193</b>.</p>
+    </div>
+    <div>
+      <h4>Fontes</h4>
+      <ol class="refs">
+        <li>BRASIL. Lei nº 9.605, de 12 de fevereiro de 1998 (Lei de Crimes Ambientais), art. 41. <a href="https://www.planalto.gov.br/ccivil_03/leis/l9605.htm" target="_blank" rel="noopener">planalto.gov.br</a></li>
+        <li>BRASIL. Lei nº 12.305, de 2 de agosto de 2010 (Política Nacional de Resíduos Sólidos), art. 47, III. <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12305.htm" target="_blank" rel="noopener">planalto.gov.br</a></li>
+        <li>BRASIL. Lei nº 14.944, de 31 de julho de 2024 (Política Nacional de Manejo Integrado do Fogo). <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14944.htm" target="_blank" rel="noopener">planalto.gov.br</a></li>
+        <li>ICMBio. Plano de Manejo Integrado do Fogo do Parque Nacional de Ilha Grande: 2023 a 2027. Brasília, 2023. <a href="https://www.gov.br/icmbio/pt-br/centrais-de-conteudo/publicacoes/planos-de-manejo-integrado-do-fogo/PMIF_PNIG_2023_A_2027.pdf" target="_blank" rel="noopener">gov.br/icmbio</a></li>
+        <li>ICMBio. APA das Ilhas e Várzeas do Rio Paraná. <a href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/unidade-de-conservacao/unidades-de-biomas/mata-atlantica/lista-de-ucs/apa-das-ilhas-e-varzeas-do-rio-parana" target="_blank" rel="noopener">gov.br/icmbio</a></li>
+        <li>MMA. Cadastro Nacional de Unidades de Conservação: Parque Nacional de Ilha Grande. <a href="https://cnuc-backend.mma.gov.br/api/v1/report/uc/161" target="_blank" rel="noopener">cnuc.mma.gov.br</a></li>
+        <li>MMA. Brasil tem mais três sítios Ramsar, 2017. <a href="https://www.gov.br/mma/pt-br/noticias/noticia-acom-2017-09-2593" target="_blank" rel="noopener">gov.br/mma</a></li>
+        <li>MINISTÉRIO DA SAÚDE. Queimadas e incêndios florestais: alerta de risco sanitário e recomendações para a população. 2. ed. Brasília, 2026. <a href="https://www.gov.br/saude/pt-br/composicao/svsa/saude-ambiental/vigiar/publicacoes/queimadas-e-incendios-florestais-alerta-de-risco-sanitario-e-recomendacoes-para-a-populacao" target="_blank" rel="noopener">gov.br/saude</a></li>
+        <li>MUNDO NOVO (MS). Decreto nº 2.281, de 2003. Cria a APA da Bacia do Rio Iguatemi. <a href="https://www.mundonovo.ms.gov.br/leis2025/DECRETOS/Decreto%202003/DECRETO%202.281-2003%20CRIA%20A%20%C3%81REA%20DE%20PROTE%C3%87%C3%83O%20AMBIENTAL%20DENOMINADA%20APA.pdf" target="_blank" rel="noopener">mundonovo.ms.gov.br</a></li>
+        <li>NOVAeng. Campanha Mundo Novo Sem Fogo: prevenção a queimadas e proteção das UCs. Ficha técnica SisEA/MS, 2026.</li>
+      </ol>
+    </div>
+    <div class="rodape-fim">
+      <span>Prefeitura Municipal de Mundo Novo · Secretaria Municipal de Meio Ambiente e Urbanismo</span>
+      <span>Assessoria técnica: NOVAeng Engenharia Ltda.</span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="visor" id="visor">
+  <button type="button" id="visor-fechar" aria-label="Fechar">×</button>
+  <img id="visor-img" src="midia/logo-campanha.jpg" alt="">
+  <p id="visor-leg"></p>
+</dialog>
+
+<script>
+(function(){
+"use strict";
+/* ---------- copiar números ---------- */
+document.querySelectorAll('[data-copiar]').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=b.getAttribute('data-copiar');
+    var ok=function(){var o=b.textContent;b.textContent='Copiado';setTimeout(function(){b.textContent=o},1600)};
+    var falha=function(){var s=b.parentElement.querySelector('strong');var r=document.createRange();r.selectNodeContents(s);var sel=getSelection();sel.removeAllRanges();sel.addRange(r);b.textContent='Selecionado';setTimeout(function(){b.textContent='Copiar'},1600)};
+    try{navigator.clipboard.writeText(t).then(ok,falha)}catch(e){falha()}
+  });
+});
+
+/* ---------- medidor de risco ---------- */
+var tgs=[].slice.call(document.querySelectorAll('.tg input'));
+function medir(){
+  var tempo=tgs.filter(function(i){return i.checked&&i.dataset.peso==='tempo'}).length;
+  var acao=tgs.filter(function(i){return i.checked&&i.dataset.peso==='acao'}).length;
+  var v=document.getElementById('veredito'),e=document.getElementById('explica'),bi=document.getElementById('barra-i'),br=document.getElementById('barra-risco');
+  var pct;
+  if(!tempo&&!acao){pct=0;v.textContent='Marque as condições';e.textContent='Comece pelas condições do tempo. Depois marque as atitudes.'}
+  else if(!acao){pct=10+tempo*8;v.textContent=tempo>=3?'Tudo pronto para queimar':'O tempo está preparando';e.textContent='Com tempo seco, a vegetação vira combustível. Mesmo assim, sem uma faísca, o fogo não começa. Agora marque as atitudes.'}
+  else if(!tempo){pct=20+acao*8;v.textContent='Perigo aceso';e.textContent='Fogo perto da vegetação é sempre risco. Com chuva e umidade alta, ele se espalha menos, mas ainda pode fugir do controle.'}
+  else{pct=Math.min(100,30+tempo*10+acao*10);v.textContent=pct>=80?'Risco muito maior':'Risco maior';e.textContent='O tempo seco preparou a vegetação e uma atitude acendeu a faísca. É assim que começa a maior parte dos incêndios que poderiam ser evitados.'}
+  bi.style.width=pct+'%';br.setAttribute('aria-label','Risco em '+pct+'%');
+}
+tgs.forEach(function(i){i.addEventListener('change',medir)});medir();
+
+/* ---------- galeria: abas ---------- */
+var abas=[].slice.call(document.querySelectorAll('.abas [role=tab]'));
+abas.forEach(function(a){a.addEventListener('click',function(){
+  abas.forEach(function(x){x.setAttribute('aria-selected',x===a?'true':'false');document.getElementById(x.getAttribute('aria-controls')).hidden=(x!==a)});
+})});
+
+/* ---------- série ---------- */
+var serie=[
+ {img:'midia/post-1-segundo.jpg',t:'1 segundo',d:'É o tempo para uma bituca cair na beira da estrada. Na seca, a grama vira palha e a faísca basta.',alt:'Arte 1 segundo: bituca de cigarro acesa caída na grama seca, com a frase para uma bituca cair'},
+ {img:'midia/post-2-minutos.jpg',t:'Minutos',d:'Em poucos minutos, com vento e vegetação seca, o fogo já tomou o capim e corre em direção à mata.',alt:'Arte Minutos: chamas avançam sobre o chão de uma mata, com a frase para o fogo se espalhar'},
+ {img:'midia/post-3-horas-ou-dias.jpg',t:'Horas ou dias',d:'Combater um incêndio exige equipe, equipamento e muito trabalho de bombeiros e brigadistas.',alt:'Arte Horas ou dias: brigadista combate as chamas, com a frase para combater um incêndio'},
+ {img:'midia/post-4-anos.jpg',t:'Anos',d:'Depois do fogo, a natureza precisa de anos para se recuperar. Na mata, a recuperação é ainda mais lenta.',alt:'Arte Anos: mata queimada com um broto verde no chão, com a frase para a natureza se recuperar'},
+ {img:'midia/post-5-canais.jpg',t:'Acione',d:'Ao identificar um foco de incêndio, acione imediatamente os canais de denúncia. Não troque segundos de descuido por anos de consequências.',alt:'Arte com os canais de denúncia: Corpo de Bombeiros 193, Polícia Militar Ambiental, Defesa Civil Estadual, Disque Denúncia 181 e Secretaria de Meio Ambiente e Urbanismo'}
+];
+var si=0,pontos=document.getElementById('serie-pontos');
+serie.forEach(function(){pontos.appendChild(document.createElement('i'))});
+function verSerie(n){si=(n+serie.length)%serie.length;var s=serie[si];var im=document.getElementById('serie-img');im.src=s.img;im.alt=s.alt;
+  document.getElementById('serie-titulo').textContent=s.t;document.getElementById('serie-desc').textContent=s.d;document.getElementById('serie-n').textContent='Arte '+(si+1)+' de '+serie.length;
+  [].forEach.call(pontos.children,function(p,i){p.className=i===si?'on':''});}
+document.getElementById('serie-ant').addEventListener('click',function(){verSerie(si-1)});
+document.getElementById('serie-prox').addEventListener('click',function(){verSerie(si+1)});
+verSerie(0);
+serie.forEach(function(s){var i=new Image();i.src=s.img});
+
+/* ---------- visor ---------- */
+var visor=document.getElementById('visor');
+document.querySelectorAll('[data-ver]').forEach(function(b){b.addEventListener('click',function(){
+  document.getElementById('visor-img').src=b.dataset.ver;document.getElementById('visor-img').alt=b.dataset.leg;document.getElementById('visor-leg').textContent=b.dataset.leg;
+  try{visor.showModal()}catch(e){visor.setAttribute('open','')}
+})});
+document.getElementById('visor-fechar').addEventListener('click',function(){visor.close()});
+visor.addEventListener('click',function(e){if(e.target===visor)visor.close()});
+
+/* ---------- checklist ---------- */
+var cks=[].slice.call(document.querySelectorAll('#check-lista input'));
+function guardar(){var n=cks.filter(function(c){return c.checked}).length;
+  document.getElementById('check-res').textContent=n===cks.length?'Tudo pronto. Agora compartilhe a lista com a família.':n+' de '+cks.length+' itens prontos';
+  try{localStorage.setItem('mnsf-check',JSON.stringify(cks.map(function(c){return c.checked})))}catch(e){}}
+try{var salvo=JSON.parse(localStorage.getItem('mnsf-check')||'[]');cks.forEach(function(c,i){c.checked=!!salvo[i]})}catch(e){}
+cks.forEach(function(c){c.addEventListener('change',guardar)});guardar();
+
+/* ---------- quiz ---------- */
+var Q=[
+ {f:'Queimar o lixo no quintal é permitido, desde que seja pouco.',r:false,e:'A queima de resíduos sólidos a céu aberto é proibida por lei, em qualquer quantidade (Lei nº 12.305/2010, art. 47, III). Separe o lixo para a coleta.'},
+ {f:'Uma bituca jogada pela janela do carro pode começar um incêndio na beira da estrada.',r:true,e:'Na estiagem, o capim seco da margem pega fogo com facilidade. Um segundo de descuido basta.'},
+ {f:'No Parque Nacional de Ilha Grande, agosto e setembro concentram a maior parte dos incêndios.',r:true,e:'O plano de manejo do fogo do parque mostra que esses dois meses reúnem a maior parte das ocorrências e da área queimada.'},
+ {f:'A várzea e a mata se recuperam do fogo no mesmo ritmo.',r:false,e:'A várzea queima fácil, mas rebrota rápido. A mata é mais sensível, e a recuperação depois do fogo é lenta e difícil.'},
+ {f:'Ao ver um foco de incêndio, o melhor é esperar para ver se o fogo apaga sozinho.',r:false,e:'Ligue para o 193 assim que vir fumaça ou chamas. Cada minuto de espera deixa o fogo maior e o combate mais difícil.'},
+ {f:'Usar fogo para limpar a roça sem autorização é seguro se não estiver ventando.',r:false,e:'O vento pode mudar a qualquer momento. O fogo no campo só pode ser usado com autorização e com os cuidados necessários.'},
+ {f:'A fumaça das queimadas pode causar tosse, ardência nos olhos e falta de ar.',r:true,e:'Crianças pequenas, idosos, gestantes e pessoas com doenças preexistentes sofrem mais. Em dias de fumaça, beba água e fique em locais fechados.'},
+ {f:'Mundo Novo abriga parte do Parque Nacional de Ilha Grande.',r:true,e:'O parque protege ilhas e várzeas do Rio Paraná em nove municípios do Paraná e de Mato Grosso do Sul, entre eles Mundo Novo.'}
+];
+var qi=0,qa=0,qbox=document.getElementById('quiz');
+function quiz(){
+  if(qi>=Q.length){qbox.innerHTML='<div class="quiz-prog"><span>Resultado</span><span>'+qa+' de '+Q.length+'</span></div><p class="quiz-frase">'+(qa===Q.length?'Você acertou tudo. Que tal ensinar para alguém de casa?':qa>=6?'Muito bem. Você já sabe proteger Mundo Novo do fogo.':'Bom começo. Releia as explicações e jogue de novo.')+'</p><div class="quiz-bts"><button class="btn btn--mata" type="button" id="q-de-novo">Jogar de novo</button></div>';
+    document.getElementById('q-de-novo').addEventListener('click',function(){qi=0;qa=0;quiz()});return}
+  var q=Q[qi];
+  qbox.innerHTML='<div class="quiz-prog"><span>Certo ou errado?</span><span>'+(qi+1)+' de '+Q.length+'</span></div><p class="quiz-frase">'+q.f+'</p><div class="quiz-bts"><button class="btn btn--mata" type="button" data-r="1">Certo</button><button class="btn btn--claro" type="button" data-r="0">Errado</button></div><div id="q-exp"></div>';
+  qbox.querySelectorAll('[data-r]').forEach(function(b){b.addEventListener('click',function(){
+    var acertou=(b.dataset.r==='1')===q.r;if(acertou)qa++;
+    qbox.querySelectorAll('[data-r]').forEach(function(x){x.disabled=true});
+    document.getElementById('q-exp').innerHTML='<div class="quiz-exp"><b>'+(acertou?'Você acertou. ':'Não foi dessa vez. ')+'A frase está '+(q.r?'certa':'errada')+'.</b>'+q.e+'</div><div class="quiz-bts" style="margin-top:12px"><button class="btn btn--mata" type="button" id="q-prox">'+(qi===Q.length-1?'Ver resultado':'Próxima')+'</button></div>';
+    var p=document.getElementById('q-prox');p.addEventListener('click',function(){qi++;quiz()});p.focus({preventScroll:true});
+  })});
+}
+quiz();
+
+/* =================== JOGO: O relógio do fogo (v2, com eventos) =================== */
+var C=14,L=9,mapa=document.getElementById('mapa'),camada=document.getElementById('camada'),painel=document.getElementById('painel');
+var INF={cidade:0,terreno:.6,estrada:.12,pasto:.55,lavoura:.45,varzea:.68,mata:.38,rio:0};
+var capoes=[[7,2],[7,3],[8,3],[6,6],[7,7],[8,6]];
+function tipoBase(c,l){
+  if(c<=1)return (c===1&&l===6)?'terreno':'cidade';
+  if(c===2)return 'estrada';
+  if(c<=5)return (l>=5&&c>=4)?'lavoura':'pasto';
+  if(c<=8){for(var k=0;k<capoes.length;k++)if(capoes[k][0]===c&&capoes[k][1]===l)return 'mata';return 'varzea'}
+  if(c===9)return 'mata';
+  if(c<=11)return 'rio';
+  if(l===0||l===8)return 'rio';
+  if(c===13&&l>=2&&l<=5)return 'mata';
+  return 'varzea';
+}
+var VENTOS=[{n:'do oeste',d:[1,0],s:'→'},{n:'do sul',d:[0,-1],s:'↑'},{n:'do norte',d:[0,1],s:'↓'},{n:'do leste',d:[-1,0],s:'←'}];
+var EVENTOS=[
+ {tipo:'carro',l:4},
+ {tipo:'pessoa',id:'vizinho',e:'🧍',c:1,l:6,titulo:'Lixo no terreno',texto:'Um vizinho juntou lixo e folhas no terreno baldio e está pronto para acender.',
+  ok:'Conversar com ele: queimar lixo é proibido, o lixo vai para a coleta',ruim:'Deixar, é só um pouco de lixo',
+  exOk:'Ele desistiu. A queima de lixo a céu aberto é proibida por lei e a fumaça faz mal à vizinhança.',exRuim:'O fogo do lixo pulou para o mato seco do terreno.'},
+ {tipo:'vento'},
+ {tipo:'pessoa',id:'produtor',e:'🧑‍🌾',c:4,l:1,titulo:'Fogo para limpar o pasto',texto:'Um produtor quer usar fogo hoje para limpar o pasto. Ele não tem autorização e está ventando.',
+  ok:'Orientar a adiar e só usar fogo com autorização e cuidados',ruim:'Ajudar a acender, o vento está fraco agora',
+  exOk:'O pasto ficou para outro dia. No campo, o fogo só pode ser usado com autorização.',exRuim:'O vento mudou e o fogo escapou do pasto.'},
+ {tipo:'pessoa',id:'pesca',e:'🎣',c:12,l:5,titulo:'Fogueira na ilha',texto:'Um grupo de pesca vai embora da ilha e a fogueira ainda solta brasa.',
+  ok:'Apagar a fogueira com água e terra antes de sair',ruim:'Deixar, ela apaga sozinha',
+  exOk:'Fogueira apagada até a última brasa. Muitos incêndios do parque começam perto das margens das ilhas.',exRuim:'O vento levou as brasas para a várzea da ilha.'},
+ {tipo:'carro',l:2,rapido:true}
+];
+var AJUDA=[
+ {id:'icmbio',t:'Brigada do ICMBio, de barco',d:'Brigadistas que conhecem as ilhas e as várzeas do parque.'},
+ {id:'pipa',t:'Caminhão-pipa da Prefeitura',d:'Mais água para a mangueira dos bombeiros.'},
+ {id:'trator',t:'Trator para abrir aceiro',d:'Uma faixa sem vegetação na frente do fogo, onde ele não passa.'},
+ {id:'defesa',t:'Defesa Civil',d:'Avisa a população e organiza o apoio.'}
+];
+var BICHOS=[{e:'🦌',n:'cervo-do-pantanal',c:7,l:5},{e:'🐆',n:'onça-pintada',c:9,l:2},{e:'🐊',n:'jacaré',c:12,l:7},{e:'🐦',n:'aves',c:8,l:1},{e:'🦌',n:'cervo-do-pantanal',c:12,l:2}];
+var S=null,FASES=document.querySelectorAll('#fases li'),TICK=700;
+var svgNS='http://www.w3.org/2000/svg';
+var svg=document.createElementNS(svgNS,'svg');svg.setAttribute('class','mangueiras');svg.setAttribute('viewBox','0 0 14 9');svg.setAttribute('preserveAspectRatio','none');svg.setAttribute('aria-hidden','true');
+
+function cel(c,l){if(c<0||l<0||c>=C||l>=L)return null;return S.g[l*C+c]}
+function viz(c,l){var r=[];[[1,0],[-1,0],[0,1],[0,-1]].forEach(function(d){var k=cel(c+d[0],l+d[1]);if(k)r.push([k,d])});return r}
+function depois(ms,fn){var id=setTimeout(fn,ms);S.tos.push(id);return id}
+function fase(n){S.fase=n;[].forEach.call(FASES,function(li,i){li.className=i===n?'ativa':(i<n?'feita':'')})}
+
+/* ----- atores com animação própria ----- */
+function ator(id,html,cls,c,l,onclick){
+  var a=S.at[id];
+  if(!a){var el=document.createElement(onclick?'button':'span');if(onclick){el.type='button';el.addEventListener('click',onclick)}
+    el.className='ator '+(cls||'');camada.appendChild(el);a=S.at[id]={el:el,x:c,y:l,fx:c,fy:l,tx:c,ty:l,t0:0,d:0}}
+  if(html!=null)a.el.innerHTML=html;
+  return a;
+}
+function mover(id,c,l,ms){var a=S.at[id];if(!a)return;a.fx=a.x;a.fy=a.y;a.tx=c;a.ty=l;a.t0=performance.now();a.d=ms||0}
+function tirar(id){var a=S.at[id];if(a){a.el.remove();delete S.at[id]}}
+function quadro(now){
+  if(S){
+    for(var id in S.at){var a=S.at[id];var k=a.d?Math.min(1,(now-a.t0)/a.d):1;a.x=a.fx+(a.tx-a.fx)*k;a.y=a.fy+(a.ty-a.fy)*k;
+      a.el.style.left=((a.x+.5)/C*100)+'%';a.el.style.top=((a.y+.5)/L*100)+'%'}
+    var h='';
+    S.mangueiras.forEach(function(m){var de=S.at[m.de],pa=S.at[m.para];if(de&&pa)h+='<path d="M'+(de.x+.5)+' '+(de.y+.6)+' Q'+((de.x+pa.x)/2+.5)+' '+(Math.max(de.y,pa.y)+1.1)+' '+(pa.x+.5)+' '+(pa.y+.55)+'" class="mg"/>'});
+    S.jatos=S.jatos.filter(function(j){return now<j.ate});
+    S.jatos.forEach(function(j){var de=S.at[j.de];if(de)h+='<line x1="'+(de.x+.5)+'" y1="'+(de.y+.45)+'" x2="'+(j.c+.5)+'" y2="'+(j.l+.5)+'" class="jato"/>'});
+    if(svg._h!==h){svg.innerHTML=h;svg._h=h}
+  }
+  requestAnimationFrame(quadro);
+}
+requestAnimationFrame(quadro);
+
+/* ----- painel ----- */
+function condicoes(){return '<div class="cond"><div><small>Vento</small><b>'+S.vento.s+' '+S.vento.n+'</b></div><div><small>Umidade</small><b>'+S.umid+'%</b></div><div><small>Chuva</small><b>Sem chuva</b></div></div>'}
+function retorno(){return S.msg?'<div class="retorno '+(S.msg.bom?'bom':'ruim')+'">'+S.msg.t+'</div>':''}
+function escolha(tit,txt,ops,cb){
+  S.pausa=true;var o=ops.slice();if(Math.random()<.5)o.reverse();
+  painel.innerHTML='<h3>'+tit+'</h3><p>'+txt+'</p><div class="escolhas">'+o.map(function(x,k){return '<button type="button" data-k="'+k+'">'+x.t+'</button>'}).join('')+'</div>';
+  painel.querySelectorAll('[data-k]').forEach(function(b){b.addEventListener('click',function(){S.pausa=false;cb(o[+b.dataset.k])})});
+  painel.querySelector('[data-k]').focus({preventScroll:true});
+}
+function msg(bom,t){S.msg={bom:bom,t:t}}
+
+/* ----- início ----- */
+function novo(){
+  if(S){S.tos.forEach(clearTimeout);for(var id in S.at)S.at[id].el.remove()}
+  S={fase:0,g:[],at:{},tos:[],mangueiras:[],jatos:[],pausa:true,vento:VENTOS[Math.floor(Math.random()*3)],umid:[14,18,22][Math.floor(Math.random()*3)],
+     fila:EVENTOS.slice(),ev:null,espera:1,focos:[],acertos:0,erros:0,perdidos:0,queimado:{},bichos:[],msg:null,
+     min:0,chamou:false,viagem:0,fumaca:false,saude:false,h:0,agua:100,equipes:[],ajuda:{},chegadas:[],descontrole:false,aguaAviso:false,ventoCombate:false,recuo:0,raio:false,iniciado:false};
+  [].slice.call(mapa.querySelectorAll('.cel')).forEach(function(x){x.remove()});
+  for(var l=0;l<L;l++)for(var c=0;c<C;c++){var t=tipoBase(c,l),d=document.createElement('div');d.className='cel';d.dataset.t=t;mapa.insertBefore(d,camada);S.g.push({c:c,l:l,t:t,f:0,q:false,ac:false,el:d})}
+  camada.appendChild(svg);svg._h=null;svg.innerHTML='';
+  BICHOS.forEach(function(b,i){var id='b'+i;S.bichos.push({id:id,e:b.e,c:b.c,l:b.l});ator(id,b.e,'bicho-m',b.c,b.l)});
+  fase(0);
+  painel.innerHTML='<h3>1 segundo</h3><p>É estiagem em Mundo Novo. Teve geada na semana passada e o capim secou. Coisas vão acontecer no mapa: carros na estrada, vizinhos, produtores, pescadores.</p>'+condicoes()+'<p>Fique de olho. Quando algo piscar, toque no mapa e escolha o que fazer. Cada segundo conta.</p><button class="btn btn--broto" type="button" id="j-comecar">Começar</button>';
+  document.getElementById('j-comecar').addEventListener('click',function(){S.pausa=false;S.iniciado=true;painelPrev()});
+}
+
+/* ----- fase 1: 1 segundo ----- */
+function painelPrev(){
+  if(S.pausa)return;
+  var n=EVENTOS.length-S.fila.length,ev=S.ev;
+  var txt=ev&&ev.aviso?ev.aviso:'Observando o mapa…';
+  var cont=ev&&ev.janela!=null&&ev.aberto?'<p class="cron">'+Math.max(0,Math.ceil(ev.janela*TICK/1000))+'s</p>':'';
+  painel.innerHTML='<h3>1 segundo</h3><p class="olho" style="color:#9FB9A7">Situação '+Math.max(1,n)+' de '+EVENTOS.length+'</p>'+cont+'<p>'+txt+'</p>'+retorno()+condicoes()+(ev&&ev.alvo?'<button class="btn btn--linha" type="button" id="j-ir">Ver a situação</button>':'');
+  var ir=document.getElementById('j-ir');if(ir)ir.addEventListener('click',ev.alvo);
+}
+function proximoEvento(){
+  var ev=S.fila.shift();if(!ev){fimPrevencao();return}
+  S.ev={def:ev};var e=S.ev;
+  if(ev.tipo==='carro'){
+    e.aviso=ev.rapido?'Outro carro vem pela estrada, mais rápido.':'Um carro vem pela estrada.';
+    ator('carro','🚗','carro',2,-1.2);mover('carro',2,9.9,ev.rapido?2600:3600);
+    var t=ev.rapido?900:1500;
+    depois(t,function(){ator('bituca','','bituca',2,ev.l);mover('bituca',3,ev.l,450)});
+    depois(t+460,function(){tirar('bituca');
+      e.aberto=true;e.janela=ev.rapido?6:8;e.aviso='Algo caiu da janela do carro no capim seco! Toque no ponto que brilha.';
+      e.alvo=function(){abrirBituca(e)};
+      ator('faisca','<span class="sr">Bituca acesa no capim</span>','faisca btn-mapa',3,ev.l,e.alvo);painelPrev()});
+    depois(ev.rapido?2700:3700,function(){tirar('carro')});
+  } else if(ev.tipo==='vento'){
+    var outros=VENTOS.filter(function(v){return v!==S.vento});S.vento=outros[Math.floor(Math.random()*outros.length)];
+    e.aviso='O vento mudou de direção. Agora ele sopra '+S.vento.n+'. Na seca, o vento decide até onde o fogo vai.';e.info=3;
+  } else {
+    e.aviso=ev.titulo+'. Toque em '+(ev.id==='pesca'?'quem está pescando':'quem está no mapa')+' para conversar.';e.aberto=true;e.janela=12;
+    e.alvo=function(){abrirPessoa(e)};
+    ator(ev.id,ev.e+'<span class="sr">'+ev.titulo+'</span>','pessoa btn-mapa',ev.c,ev.l,e.alvo);
+  }
+  painelPrev();
+}
+function focar(c,l){var k=cel(c,l);if(k&&!S.focos.some(function(f){return f===k})){S.focos.push(k);k.el.classList.add('brasa')}}
+function fecharEvento(){S.ev=null;S.espera=2;painelPrev()}
+function abrirBituca(e){
+  if(!e.aberto)return;e.aberto=false;
+  escolha('Bituca no capim','A bituca ainda está acesa no capim seco da beira da estrada. Ela ainda é só uma faísca.',[
+    {t:'Abafar com terra agora, antes que pegue',b:true},{t:'Deixar, bituca apaga sozinha',b:false}],function(o){
+    tirar('faisca');
+    if(o.b){S.acertos++;msg(true,'Faísca abafada a tempo. Quem joga bituca na estrada pode ser denunciado no 181.')}
+    else{S.erros++;focar(3,e.def.l);msg(false,'A bituca pegou no capim seco. Um segundo de descuido basta.')}
+    fecharEvento()});
+}
+function abrirPessoa(e){
+  if(!e.aberto)return;e.aberto=false;var ev=e.def;
+  escolha(ev.titulo,ev.texto,[{t:ev.ok,b:true},{t:ev.ruim,b:false}],function(o){
+    tirar(ev.id);
+    if(o.b){S.acertos++;msg(true,ev.exOk)}else{S.erros++;focar(ev.c,ev.l);msg(false,ev.exRuim)}
+    fecharEvento()});
+}
+function tickPrev(){
+  var e=S.ev;
+  if(!e){S.espera--;if(S.espera<=0)proximoEvento();return}
+  if(e.info!=null){e.info--;if(e.info<=0){S.msg=null;fecharEvento()}return}
+  if(e.aberto&&e.janela!=null){e.janela--;
+    if(e.janela<=0){e.aberto=false;S.perdidos++;
+      if(e.def.tipo==='carro'){tirar('faisca');focar(3,e.def.l);msg(false,'Ninguém viu a bituca a tempo e ela pegou no capim.')}
+      else{tirar(e.def.id);focar(e.def.c,e.def.l);msg(false,'Ninguém conversou a tempo. '+e.def.exRuim)}
+      fecharEvento();return}
+    painelPrev()}
+}
+function fimPrevencao(){
+  S.pausa=true;
+  if(!S.focos.length){S.raio=true;var k=cel(12,7);S.focos.push(k);ator('raio','⚡','raio',12,6.6);depois(1300,function(){tirar('raio')})}
+  var n=S.focos.length;
+  painel.innerHTML='<h3>Fim do primeiro segundo</h3>'+retorno()+'<div class="placar"><div><b>'+S.acertos+'</b><small>Atitudes certas</small></div><div><b>'+S.erros+'</b><small>Atitudes erradas</small></div><div><b>'+S.perdidos+'</b><small>Perdidas no tempo</small></div></div><p>'+(S.raio?'Você evitou todos os focos causados por pessoas. Mas um raio caiu na várzea da ilha. Raios também começam incêndios no parque.':(n===1?'Ficou um foco aceso.':'Ficaram '+n+' focos acesos.')+' Com vento '+S.vento.n+' e umidade de '+S.umid+'%, ele vai crescer.')+'</p><button class="btn btn--broto" type="button" id="j-min-go">Avançar para os minutos</button>';
+  document.getElementById('j-min-go').addEventListener('click',iniciarMinutos);
+}
+
+/* ----- fogo ----- */
+function acender(k){if(k&&!k.q&&!k.f&&!k.ac&&INF[k.t]>0){k.f=1;k.el.classList.remove('brasa');k.el.classList.add('fogo')}}
+function queimar(k){k.f=0;k.q=true;k.el.classList.remove('fogo','brasa');k.el.classList.add('cinza');S.queimado[k.t]=(S.queimado[k.t]||0)+1}
+function espalhar(fator){
+  var novos=[];
+  S.g.forEach(function(k){if(k.f>0){
+    viz(k.c,k.l).forEach(function(v){var n=v[0],d=v[1];if(n.f||n.q||n.ac||!INF[n.t])return;
+      var p=INF[n.t]*fator*(S.umid<=14?1.15:S.umid<=18?1.05:1);
+      if(d[0]===S.vento.d[0]&&d[1]===S.vento.d[1])p*=1.7;else if(d[0]===-S.vento.d[0]&&d[1]===-S.vento.d[1])p*=.35;else p*=.8;
+      if(Math.random()<p)novos.push(n)});
+    k.f++;if(k.f>(k.t==='mata'?7:5))queimar(k);
+  }});
+  novos.forEach(acender);
+}
+function ardendo(f){return S.g.filter(function(k){return k.f>0&&(!f||f(k))})}
+function fugir(){
+  S.bichos.forEach(function(b){
+    var perto=viz(b.c,b.l).concat([[cel(b.c,b.l)]]).some(function(v){return v[0].f>0});
+    if(!perto)return;
+    var voa=b.e==='🐦',melhor=null,dist=-1,cand=[];
+    for(var dx=-2;dx<=2;dx++)for(var dy=-2;dy<=2;dy++){if(!voa&&Math.abs(dx)+Math.abs(dy)>1)continue;var k=cel(b.c+dx,b.l+dy);if(!k||k.f>0)continue;if(k.t==='rio'&&b.e!=='🐊'&&!voa)continue;cand.push(k)}
+    cand.forEach(function(p){var m=99;S.g.forEach(function(k){if(k.f>0){var d=Math.abs(k.c-p.c)+Math.abs(k.l-p.l);if(d<m)m=d}});if(m>dist){dist=m;melhor=p}});
+    if(melhor){b.c=melhor.c;b.l=melhor.l;mover(b.id,b.c,b.l,TICK)}
+  });
+}
+
+/* ----- fase 2: minutos ----- */
+function iniciarMinutos(){
+  fase(1);S.pausa=false;S.msg=null;S.focos.forEach(acender);S.min=0;painelMin();
+}
+function painelMin(){
+  if(S.pausa)return;
+  var arde=ardendo().length;
+  painel.innerHTML='<h3>Minutos</h3><p class="cron">'+(S.min*5)+' min</p><p>'+(S.chamou?'O Corpo de Bombeiros está a caminho pela estrada.':'O fogo cresce com o vento '+S.vento.n+'.')+'</p>'+retorno()+condicoes()+'<div class="placar"><div><b>'+arde+'</b><small>Em chamas</small></div><div><b>'+tot()+'</b><small>Queimado</small></div><div><b>'+(S.queimado.mata||0)+'</b><small>Mata queimada</small></div></div>';
+}
+function tot(){var t=0;for(var k in S.queimado)t+=S.queimado[k];return t}
+function linhaFogoTerra(){var a=ardendo(function(k){return k.c<=9});if(!a.length)return 4;a.sort(function(x,y){return x.c-y.c});return a[0].l}
+function tickMin(){
+  S.min++;espalhar(.8);fugir();
+  if(!S.chamou&&S.min===2){
+    var lado=ardendo(function(k){return k.c<=9}).length?[1,Math.max(1,Math.min(7,linhaFogoTerra()))]:[9.4,4];
+    ator('morador','🧍<span class="balao">Fumaça!</span>','morador',lado[0],lado[1]);
+    escolha('Alguém viu a fumaça','Um morador viu a fumaça subindo. O que ele deve fazer agora?',[
+      {t:'Ligar 193, Corpo de Bombeiros',b:true},
+      {t:'Ligar 181, Disque Denúncia',b:false,ex:'O 181 recebe denúncias. Para fogo acontecendo agora, o número é o 193. Ele precisou ligar de novo.'},
+      {t:'Esperar para ver se o fogo apaga sozinho',b:false,ex:'Esperar deixa o fogo crescer. Cada minuto conta.'},
+      {t:'Tentar apagar sozinho com um balde',b:false,ex:'Um fogo grande não se apaga com balde, e a fumaça é perigosa. Afaste-se e ligue 193.'}].slice(0,4),ligar);
+    return;
+  }
+  if(S.chamou){S.viagem--;if(S.viagem<=0){iniciarCombate();return}}
+  if(S.chamou&&!S.fumaca&&S.min>=3){S.fumaca=true;
+    escolha('A fumaça chegou às casas','O vento empurra a fumaça para a cidade. Tem criança, idoso e gente com asma na vizinhança.',[
+      {t:'Avisar a vizinhança: janelas fechadas, água e crianças e idosos dentro de casa',b:true},
+      {t:'Levar as crianças para ver o fogo de perto',b:false}],function(o){
+        if(o.b){S.acertos++;S.saude=true;msg(true,'Vizinhança protegida. Em dia de fumaça, fique em local fechado, beba água e evite esforço ao ar livre.')}
+        else{S.erros++;msg(false,'A fumaça faz mal, principalmente para crianças, idosos e quem tem doença respiratória. Longe do fogo é mais seguro.')}
+        painelMin()});
+    return;
+  }
+  painelMin();
+}
+function ligar(o){
+  if(!o.b){S.erros++;espalhar(.8);espalhar(.8);fugir();msg(false,o.ex+' Enquanto isso, o fogo avançou.');
+    escolha('Alguém viu a fumaça','O fogo avançou. E agora, o que o morador faz?',[{t:'Ligar 193, Corpo de Bombeiros',b:true},{t:'Esperar mais um pouco',b:false,ex:'Esperar deixa o fogo crescer.'}],ligar);return}
+  S.acertos++;S.chamou=true;S.viagem=4;
+  ator('morador','🧍<span class="balao">193!</span>','morador');
+  msg(true,'Ligação feita para o 193, dizendo onde é o fogo e o que tem perto. O caminhão saiu.');
+  S.linhaCam=Math.max(0,Math.min(8,linhaFogoTerra()));
+  ator('caminhao','🚒','caminhao',2,-1.2);mover('caminhao',2,S.linhaCam,S.viagem*TICK);
+  painelMin();
+}
+
+/* ----- fase 3: horas ou dias ----- */
+function iniciarCombate(){
+  fase(2);S.h=0;S.msg=null;S.pausa=false;tirar('morador');
+  ['bb1','bb2'].forEach(function(id,i){var ty=S.linhaCam+(i?.5:-.5);S.equipes.push({id:id,tipo:'bomb',x:3.3,y:ty});ator(id,'🧑‍🚒','equipe',2.2,S.linhaCam);mover(id,3.3,ty,1100);S.mangueiras.push({de:'caminhao',para:id})});
+  msg(true,'Os bombeiros chegaram, desceram do caminhão e puxaram a mangueira.');
+  montarPainelCombate();
+}
+function montarPainelCombate(){
+  painel.innerHTML='<h3>Horas ou dias</h3><p class="cron" id="c-h">0 h</p><div id="c-msg">'+retorno()+'</div>'+
+   '<div class="placar"><div><b id="c-arde">0</b><small>Em chamas</small></div><div><b id="c-q">0</b><small>Queimado</small></div><div><b id="c-mata">0</b><small>Mata queimada</small></div></div>'+
+   '<div class="agua"><small>Água do caminhão</small><div class="agua-barra"><i id="c-agua"></i></div></div>'+
+   '<div id="c-ajuda"></div>';
+  desenharAjuda();atualizarCombate();
+}
+function desenharAjuda(){
+  var box=document.getElementById('c-ajuda');if(!box)return;
+  if(!S.descontrole){box.innerHTML='';return}
+  box.innerHTML='<p style="font-weight:700;color:var(--broto)">Pedir ajuda</p><div class="escolhas">'+AJUDA.map(function(a){var st=S.ajuda[a.id];return '<button type="button" data-aj="'+a.id+'"'+(st?' disabled':'')+'>'+a.t+'<small style="display:block;font-weight:500;color:#9FB9A7">'+(st==='chegou'?'Chegou e está ajudando':st?'A caminho':a.d)+'</small></button>'}).join('')+'</div>';
+  box.querySelectorAll('[data-aj]').forEach(function(b){b.addEventListener('click',function(){pedirAjuda(b.dataset.aj)})});
+}
+function pedirAjuda(id){
+  if(S.ajuda[id])return;S.ajuda[id]='a caminho';S.chegadas.push({id:id,t:3});
+  if(id==='icmbio'){var l=ardendo(function(k){return k.c>=12}).length?ardendo(function(k){return k.c>=12})[0].l:5;ator('barco','🚤','barco',10.5,9.6);mover('barco',10.6,l,3*TICK);S.linhaBarco=l}
+  if(id==='pipa'){ator('pipa','🚛','caminhao',2,-1.2);mover('pipa',2,Math.max(0,S.linhaCam-1),3*TICK)}
+  if(id==='trator'){ator('trator','🚜','caminhao',2,9.8);mover('trator',3,Math.min(8,S.linhaCam+1),3*TICK)}
+  desenharAjuda();
+}
+function chegou(id){
+  S.ajuda[id]='chegou';
+  if(id==='icmbio'){var l=S.linhaBarco||5,lado=ardendo(function(k){return k.c>=12}).length?12:9;
+    ['ic1','ic2'].forEach(function(e,i){var tx=lado===12?11.7:9.6,ty=l+(i?.45:-.45);S.equipes.push({id:e,tipo:'brig',x:tx,y:ty});ator(e,'🧑‍🚒','equipe brig',10.6,l);mover(e,tx,ty,1000)});
+    msg(true,'A brigada do ICMBio chegou de barco, com abafadores e bombas costais.')}
+  if(id==='pipa'){S.agua=100;msg(true,'O caminhão-pipa encheu o tanque. A mangueira voltou com força.')}
+  if(id==='trator'){
+    var feitos=0,a=ardendo(function(k){return k.c<=9});
+    a.forEach(function(k){if(feitos>=10)return;[1,2].forEach(function(dist){var n=cel(k.c+S.vento.d[0]*dist,k.l+S.vento.d[1]*dist);if(n&&!n.f&&!n.q&&!n.ac&&INF[n.t]>0&&n.c>=3&&n.c<=9&&feitos<10){n.ac=true;n.el.classList.add('aceiro');feitos++}})});
+    msg(true,'O trator abriu um aceiro na frente do fogo, na direção do vento. Ali o fogo não passa.')}
+  if(id==='defesa'){S.saude=true;msg(true,'A Defesa Civil avisou a população e organizou o apoio às equipes.')}
+  desenharAjuda();
+}
+function atualizarCombate(){
+  var q=function(i){return document.getElementById(i)};
+  if(!q('c-h'))return;
+  q('c-h').textContent=S.h+' h';q('c-arde').textContent=ardendo().length;q('c-q').textContent=tot();q('c-mata').textContent=S.queimado.mata||0;
+  q('c-agua').style.width=Math.max(0,S.agua)+'%';q('c-msg').innerHTML=retorno();
+}
+function alvoDe(e){
+  var lista=ardendo(function(k){return e.tipo==='bomb'?k.c<=9:true});
+  if(!lista.length)return null;
+  lista.sort(function(a,b){return (Math.hypot(a.c-e.x,a.l-e.y))-(Math.hypot(b.c-e.x,b.l-e.y))});return lista[0];
+}
+function tickCombate(){
+  S.h++;espalhar(.42);fugir();
+  S.chegadas=S.chegadas.filter(function(c){c.t--;if(c.t<=0){chegou(c.id);return false}return true});
+  if(S.recuo>0)S.recuo--;
+  S.equipes.forEach(function(e){
+    var k=alvoDe(e);if(!k||S.recuo>0)return;
+    var dx=k.c-e.x,dy=k.l-e.y,d=Math.hypot(dx,dy);
+    if(d>1.15){var p=Math.min(.75,d-1);var nx=e.x+dx/d*p,ny=e.y+dy/d*p;
+      if(e.tipo==='bomb'){nx=Math.min(9.3,nx)}
+      if(e.tipo==='brig'&&cel(Math.round(nx),Math.round(ny))&&cel(Math.round(nx),Math.round(ny)).t==='rio'&&k.c>=12)nx=Math.max(nx,11.6);
+      e.x=nx;e.y=ny;mover(e.id,e.x,e.y,TICK);
+      if(e.tipo==='bomb'&&d>3)return}
+    if(Math.hypot(k.c-e.x,k.l-e.y)>3.2)return;
+    var forca=e.tipo==='brig'?.65:(S.agua>0?.95:.3);
+    if(e.tipo==='bomb'&&S.agua>0){S.agua-=4;S.jatos.push({de:e.id,c:k.c,l:k.l,ate:performance.now()+TICK})}
+    if(Math.random()<forca){queimar(k);var v=viz(k.c,k.l).map(function(x){return x[0]}).filter(function(n){return n.f>0});if(v.length&&Math.random()<forca*.6)queimar(v[0])}
+  });
+  var arde=ardendo(),mataArde=arde.filter(function(k){return k.t==='mata'}).length,ilha=arde.filter(function(k){return k.c>=12}).length;
+  if(!S.descontrole&&(arde.length>=7||mataArde>0||ilha>0)){
+    S.descontrole=true;S.pausa=true;
+    painel.innerHTML='<h3>A situação saiu do controle</h3><p>'+(ilha?'O fogo está na ilha e o caminhão não atravessa o rio. ':'')+(mataArde?'O fogo chegou à mata. ':'')+'Os bombeiros sozinhos não dão conta. Chame quem pode ajudar. Você pode chamar mais de um.</p><div id="c-ajuda"></div><button class="btn btn--broto" type="button" id="c-volta">Voltar ao combate</button>';
+    desenharAjuda();document.getElementById('c-volta').addEventListener('click',function(){S.pausa=false;montarPainelCombate()});return;
+  }
+  if(!S.aguaAviso&&S.agua<=30&&!S.ajuda.pipa){S.aguaAviso=true;
+    escolha('A água está acabando','O tanque do caminhão está quase vazio e ainda tem fogo.',[{t:'Chamar o caminhão-pipa da Prefeitura',b:true},{t:'Seguir até a água acabar',b:false}],function(o){
+      if(o.b){S.acertos++;S.descontrole=true;pedirAjuda('pipa');msg(true,'Caminhão-pipa a caminho.')}else{S.erros++;msg(false,'Sem água, os bombeiros passam a usar só abafadores. O combate fica mais lento.')}
+      montarPainelCombate()});return}
+  if(!S.ventoCombate&&S.h===5&&arde.length){S.ventoCombate=true;
+    var outros=VENTOS.filter(function(v){return v!==S.vento});S.vento=outros[Math.floor(Math.random()*outros.length)];
+    escolha('O vento virou','O vento agora sopra '+S.vento.n+' e a fumaça vem na direção da equipe. O que os bombeiros fazem?',[
+      {t:'Recuar para um lugar seguro e atacar pelo lado do fogo',b:true},{t:'Avançar pelo meio da fumaça',b:false}],function(o){
+      if(o.b){S.acertos++;msg(true,'Boa decisão. Atacar pelo lado do fogo, com a fumaça longe, é mais seguro e eficiente.')}
+      else{S.erros++;S.recuo=2;msg(false,'A fumaça cercou a equipe e eles tiveram de recuar. Segurança vem primeiro.')}
+      montarPainelCombate()});return}
+  if(!arde.length&&S.h>1){S.pausa=true;depois(700,fimCombate);atualizarCombate();return}
+  if(S.h>110){ardendo().forEach(queimar)}
+  atualizarCombate();
+}
+function fimCombate(){
+  var qt=tot(),mata=S.queimado.mata||0,tit,txt;
+  if(qt<=14){tit='Os bombeiros controlaram o fogo';txt='O aviso chegou cedo e o fogo foi apagado ainda pequeno.'}
+  else if(mata<=2){tit='Os brigadistas evitaram o pior';txt=mata?'O fogo queimou pasto e várzea e só tocou a borda da mata.':'O fogo queimou pasto e várzea, mas não chegou à mata.'}
+  else{tit='Desta vez, o fogo chegou à mata';txt='O combate foi longo e parte da mata queimou. É ali que a natureza mais demora a se recuperar.'}
+  var ajudas=AJUDA.filter(function(a){return S.ajuda[a.id]}).map(function(a){return a.t});
+  S.resultado={tit:tit};S.mangueiras=[];
+  painel.innerHTML='<h3>'+tit+'</h3><p>'+txt+'</p><div class="placar"><div><b>'+qt+'</b><small>Quadros queimados</small></div><div><b>'+S.acertos+'</b><small>Escolhas certas</small></div><div><b>'+S.erros+'</b><small>Escolhas erradas</small></div></div>'+
+   '<p>'+(ajudas.length?'Ajuda chamada: '+ajudas.join(', ')+'.':'Ninguém de fora precisou ser chamado.')+' Todos os bichos conseguiram fugir.</p><button class="btn btn--broto" type="button" id="j-anos">Avançar para os anos</button>';
+  document.getElementById('j-anos').addEventListener('click',anos);
+}
+
+/* ----- fase 4: anos ----- */
+var PASSOS=['Logo depois do fogo','Alguns meses depois','Um ano depois','Alguns anos depois','Muitos anos depois'];
+var TXT=['O chão está coberto de cinzas. O solo fica exposto e a fumaça ainda sobe em alguns pontos.','A várzea e o capim já rebrotam. Na mata, quase nada mudou.','A várzea está verde de novo. A mata queimada ainda mostra troncos mortos e clareiras.','Na mata, plantas jovens começam a fechar as clareiras. A floresta antiga ainda não voltou.','A mata segue se refazendo, devagar. Se o fogo voltar antes, ela recomeça do zero.'];
+function anos(){
+  fase(3);['caminhao','pipa','trator','barco','bb1','bb2','ic1','ic2'].forEach(tirar);S.equipes=[];
+  painel.innerHTML='<h3>Anos</h3><div class="tempo-anos"><label for="j-anos-r">Arraste o tempo</label><input type="range" id="j-anos-r" min="0" max="4" step="1" value="0"><output id="j-anos-o">'+PASSOS[0]+'</output></div><p id="j-anos-t"></p><div class="retorno bom">'+S.resultado.tit+'. Obrigado a quem avisa e a quem combate o fogo: moradores, bombeiros, brigadistas e equipes do ICMBio.</div><p class="chave">Não troque segundos de descuido por anos de consequências.</p><button class="btn btn--linha" type="button" id="j-denovo">Jogar de novo</button>';
+  var r=document.getElementById('j-anos-r');r.addEventListener('input',function(){recuperar(+r.value)});
+  document.getElementById('j-denovo').addEventListener('click',novo);recuperar(0);
+}
+function recuperar(p){
+  document.getElementById('j-anos-o').textContent=PASSOS[p];document.getElementById('j-anos-t').textContent=TXT[p];
+  S.g.forEach(function(k){if(k.ac){k.el.classList.toggle('aceiro',p<2)}if(!k.q)return;k.el.classList.remove('cinza','rebrota','jovem');
+    if(k.t==='mata'){if(p<=2)k.el.classList.add('cinza');else k.el.classList.add(p===3?'rebrota':'jovem')}
+    else{if(p===0)k.el.classList.add('cinza');else if(p===1)k.el.classList.add('rebrota')}});
+}
+
+/* ----- relógio do jogo ----- */
+setInterval(function(){
+  if(!S||S.pausa||!S.iniciado)return;
+  if(S.fase===0)tickPrev();else if(S.fase===1)tickMin();else if(S.fase===2)tickCombate();
+},TICK);
+document.getElementById('j-reiniciar').addEventListener('click',novo);
+novo();
+})();
+</script>
+
+</body></html>
